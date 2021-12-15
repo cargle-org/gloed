@@ -14,7 +14,7 @@ import SocialLinkedIn from './images/social/linkedIn.svg'
 import SocialSlack from './images/social/slack.svg'
 
 function App() {
-	const [selectedCourse, setSelectedCourse] = useState("excel")
+	const [selectedCourse, setSelectedCourse] = useState("sql")
 	const [menuOpen, setMenuOpen] = useState(false)
 	useEffect(() => {
 
@@ -30,9 +30,9 @@ function App() {
 						</div>
 						<div className="header-menu">
 							<ul className="">
-								<li className=""><a href="" className="">About Us</a></li>
-								<li className=""><a href="" className="">Pricing</a></li>
-								<li className=""><a href="" className="">Testimonials</a></li>
+								<li className=""><a href="#about-us" className="">About Us</a></li>
+								<li className=""><a href="#available-courses" className="">Pricing</a></li>
+								<li className=""><a href="#testimonials" className="">Testimonials</a></li>
 							</ul>
 						</div>
 						<div className="mobile-menu">
@@ -125,7 +125,7 @@ function App() {
 				</div>
 			</header>
 			{/* available courses */}
-			<section className="available-courses">
+			<section id = "available-courses" className="available-courses">
 				<div className="">
 					<h2 className="pricing">Pricing</h2>
 					<h4 className="available-courses-text">Available Courses</h4>
@@ -300,7 +300,7 @@ function App() {
 			{/* about us and testimonials */}
 			<section className="about-us-and-testimonials">
 				{/* about us */}
-				<section className="about-us">
+				<section id = "about-us" className="about-us">
 					<div className="about-us-grid">
 						<div className="about-us-grid-div1">
 							<img src={AboutUsImage} alt="" className="" />
@@ -339,7 +339,7 @@ function App() {
 					</div>
 				</section>
 				{/* testimonials */}
-				<section className="testimonials">
+				<section id = "testimonials" className="testimonials">
 					<h2 className="feedback ">feedback</h2>
 					<h4 className="testimonials-text">Testimonials</h4>
 					<div className="testimonials-carousel">

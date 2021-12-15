@@ -1,7 +1,52 @@
-@import url('http://fonts.cdnfonts.com/css/gilroy-bold?styles=20876,20877,20878,20879,20880');
-@import url('http://db.onlinewebfonts.com/c/55d433372d270829c51e2577a78ef12d?family=Monument+Extended');
-@import url('http://db.onlinewebfonts.com/c/1dc8ecd8056a5ea7aa7de1db42b5b639?family=Gilroy');
-@import url('https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.css');
+/* @import url('http://fonts.cdnfonts.com/css/gilroy-bold?styles=20876,20877,20878,20879,20880');
+ @import url('http://db.onlinewebfonts.com/c/55d433372d270829c51e2577a78ef12d?family=Monument+Extended');
+@import url('http://db.onlinewebfonts.com/c/1dc8ecd8056a5ea7aa7de1db42b5b639?family=Gilroy'); */ 
+
+@font-face {
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: bold;
+	src: url("./font/Gilroy-Bold.woff") format('woff');
+}
+
+
+@font-face {
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: bolder;
+	src: url("./font/Gilroy-Heavy.woff") format('woff');
+}
+
+
+@font-face {
+	font-family: 'Gilroy-Light';
+	font-style: normal;
+	font-weight: lighter;
+	src: url("./font/Gilroy-Light.woff") format('woff');
+}
+
+
+@font-face {
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: medium;
+	src: url("./font/Gilroy-Medium.woff") format('woff');
+}
+
+
+@font-face {
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: normal;
+	src: url('./font/Gilroy-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Monument Extended';
+	font-style: normal;
+	font-weight: normal;
+	src: url("./font/Monument\ Extended.woff") format('woff');
+}
 
 
 * {
@@ -855,13 +900,14 @@ footer .footer-div .footer-section2 .company-name {
 	.join-our-slack .join-our-slack-grid .join-our-slack-grid-div1 {
 		padding-right: 0;
 	}
+
 	.join-our-slack-grid-div2 {
 		grid-row: 1;
 	}
 
 	.about-us-grid .about-us-grid-div1 {
 		width: 100%;
-		
+
 	}
 
 	.about-us-grid .about-us-grid-div2 {
@@ -945,6 +991,7 @@ footer .footer-div .footer-section2 .company-name {
 	.join-our-slack {
 		padding-top: 1024px;
 	}
+
 	.about-us-grid .people-trained {
 		grid-template-columns: 1fr;
 	}
