@@ -6,7 +6,7 @@
 	font-family: 'Gilroy';
 	font-style: normal;
 	font-weight: bold;
-	src: url("./font/Gilroy-Bold.woff") format('woff');
+	src: url("../font/Gilroy-Bold.woff") format('woff');
 }
 
 
@@ -14,7 +14,7 @@
 	font-family: 'Gilroy';
 	font-style: normal;
 	font-weight: bolder;
-	src: url("./font/Gilroy-Heavy.woff") format('woff');
+	src: url("../font/Gilroy-Heavy.woff") format('woff');
 }
 
 
@@ -22,7 +22,7 @@
 	font-family: 'Gilroy-Light';
 	font-style: normal;
 	font-weight: lighter;
-	src: url("./font/Gilroy-Light.woff") format('woff');
+	src: url("../font/Gilroy-Light.woff") format('woff');
 }
 
 
@@ -30,7 +30,7 @@
 	font-family: 'Gilroy';
 	font-style: normal;
 	font-weight: 500;
-	src: url("./font/Gilroy-Medium.woff") format('woff');
+	src: url("../font/Gilroy-Medium.woff") format('woff');
 }
 
 
@@ -38,14 +38,14 @@
 	font-family: 'Gilroy';
 	font-style: normal;
 	font-weight: normal;
-	src: url('./font/Gilroy-Regular.woff') format('woff');
+	src: url('../font/Gilroy-Regular.woff') format('woff');
 }
 
 @font-face {
 	font-family: 'Monument Extended';
 	font-style: normal;
 	font-weight: normal;
-	src: url("./font/Monument\ Extended.woff") format('woff');
+	src: url("../font/Monument\ Extended.woff") format('woff');
 }
 
 
@@ -419,7 +419,7 @@ a.join-slack {
 	align-items: center;
 	font-family: 'Gilroy', sans-serif;
 	font-style: normal;
-	font-weight: medium;
+	font-weight: 500;
 	font-size: 18px;
 	line-height: 150.7%;
 	letter-spacing: -0.01em;

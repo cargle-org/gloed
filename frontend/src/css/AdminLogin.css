@@ -1,0 +1,136 @@
+
+
+@font-face {
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: bold;
+	src: url("../font/Gilroy-Bold.woff") format('woff');
+}
+
+
+@font-face {
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: bolder;
+	src: url("../font/Gilroy-Heavy.woff") format('woff');
+}
+
+
+@font-face {
+	font-family: 'Gilroy-Light';
+	font-style: normal;
+	font-weight: lighter;
+	src: url("../font/Gilroy-Light.woff") format('woff');
+}
+
+
+@font-face {
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: 500;
+	src: url("../font/Gilroy-Medium.woff") format('woff');
+}
+
+
+@font-face {
+	font-family: 'Gilroy';
+	font-style: normal;
+	font-weight: normal;
+	src: url('../font/Gilroy-Regular.woff') format('woff');
+}
+
+@font-face {
+	font-family: 'Monument Extended';
+	font-style: normal;
+	font-weight: normal;
+	src: url("../font/Monument\ Extended.woff") format('woff');
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.body-div {
+    height: 100vh;
+    background: #f2f2f2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.body-div .form-div  {
+   width: 360px;
+    /* background:#4588EC; */
+    /* border : 1px solid #4588EC; */
+    background: white;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+    padding: 32px;
+}
+
+.body-div .form-div form {
+    text-align: center;
+}
+
+.body-div .form-div .form-text {
+    font-family: 'Gilroy', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 101.1%;
+	text-align: center;
+	letter-spacing: -0.02em;
+	color: #4588EC;
+	margin-bottom: 48px;
+}
+
+.body-div .form-div input {
+    font-family: 'Gilroy', sans-serif;
+    height: 24px;
+    outline: none;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid  #4588EC; 
+    margin-bottom: 32px;
+    font-size: 18px;
+}
+
+.body-div .form-div input::placeholder {
+    opacity: 0.5;
+}
+
+.body-div .form-div button {
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 500;
+    height: 40px;
+    background: #4588EC;
+    border-radius: 2px;
+    color: white;
+    font-size: 18px;
+    width: 100%;
+    border: none;
+}
+
+
+
+.form-error {
+    /* bg-yellow-100 rounded-lg py-5 px-6 mb-3 text-base text-yellow-700 inline-flex items-center w-full" */
+    background: #fef9c3;
+    border-radius: 6px;
+    padding: 10px 24px;
+    display: flex;
+    align-items: center;
+    color: #a16207;
+    margin-bottom: 32px;
+}
+
+.form-error svg {
+    /* svg-inline--fa fa-exclamation-triangle w-4 h-4 mr-2 fill-current */
+    height: 16px;
+    width: 16px;
+    fill: currentColor;
+    margin-right: 8px;
+}
