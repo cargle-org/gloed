@@ -1,6 +1,6 @@
 /* @import url('http://fonts.cdnfonts.com/css/gilroy-bold?styles=20876,20877,20878,20879,20880');
  @import url('http://db.onlinewebfonts.com/c/55d433372d270829c51e2577a78ef12d?family=Monument+Extended');
-@import url('http://db.onlinewebfonts.com/c/1dc8ecd8056a5ea7aa7de1db42b5b639?family=Gilroy'); */ 
+@import url('http://db.onlinewebfonts.com/c/1dc8ecd8056a5ea7aa7de1db42b5b639?family=Gilroy'); */
 
 @font-face {
 	font-family: 'Gilroy';
@@ -29,7 +29,7 @@
 @font-face {
 	font-family: 'Gilroy';
 	font-style: normal;
-	font-weight: medium;
+	font-weight: 500;
 	src: url("./font/Gilroy-Medium.woff") format('woff');
 }
 
@@ -336,6 +336,7 @@ a.join-slack {
 }
 
 .available-courses .pricing-div .prices {
+	align-items: start;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	gap: 28px;
@@ -395,6 +396,79 @@ a.join-slack {
 	position: absolute;
 	bottom: 36px;
 	color: rgba(69, 136, 236, 0.1);
+}
+.available-courses .pricing-div .prices .start-here {
+	display: none;
+	opacity: 0;
+	text-decoration: none;
+}
+
+.available-courses .pricing-div .prices .start-here-div {
+	display: inline-flex;
+	height: 50px;
+	width: 200px;
+	box-shadow: 0px 4px 20px 10px rgba(0, 0, 0, 0.05);
+	margin-top: 16px;
+}
+
+.available-courses .pricing-div .prices .start-here-div-div1 {
+	text-transform: uppercase;
+	background: #FDD961;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'Gilroy', sans-serif;
+	font-style: normal;
+	font-weight: medium;
+	font-size: 18px;
+	line-height: 150.7%;
+	letter-spacing: -0.01em;
+	color: #000000;
+	flex-grow: 1;
+}
+
+.available-courses .pricing-div .prices .start-here-div-div2 {
+	flex-basis: 50px;
+	background: #ECBA13;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.available-courses .pricing-div .prices>div:hover {
+	background: #4588EC;
+	transition: all 1s ease;
+}
+
+.available-courses .pricing-div .prices>div:hover .plan-name {
+	color: #BDD8FF;
+	transition: all 1s ease;
+}
+
+.available-courses .pricing-div .prices>div:hover .plan-price {
+	color: #FFFFFF;
+	transition: all 1s ease;
+}
+
+.available-courses .pricing-div .prices>div:hover .plan-description {
+	color: #FFFFFF;
+	transition: all 1s ease;
+}
+
+.available-courses .pricing-div .prices>div:hover .plan-time {
+	color: #FFFFFF;
+	transition: all 1s ease;
+}
+
+.available-courses .pricing-div .prices>div:hover .plan-banner {
+	color: rgba(255, 255, 255, 0.1);
+	bottom: calc(50px + 16px + 36px);
+}
+
+.available-courses .pricing-div .prices>div:hover  .start-here {
+	display: inline;
+	opacity: 1;
+	transition: opacity 1s ease;
 }
 
 .available-courses .coming-soon {
@@ -684,8 +758,6 @@ a.join-slack {
 	margin-right: 30px;
 }
 
-
-
 .testimonials .testimonial-card {
 	border: 1px solid #E2E2E2;
 	border-radius: 16px;
@@ -733,6 +805,25 @@ a.join-slack {
 	color: #A19B9D;
 }
 
+.testimonials .testimonial-card:hover {
+	background: #33C481;
+	transition: all 1s ease;
+}
+
+.testimonials .testimonial-card:hover .testimonial-card-text {
+	color : white;
+	transition: all 1s ease;
+}
+
+.testimonials .testimonial-card:hover .testimonail-persona h6 {
+	color : white;
+	transition: all 1s ease;
+}
+
+.testimonials .testimonial-card:hover .testimonail-persona span{
+	color : white;
+	transition: all 1s ease;
+}
 
 /* footer */
 
@@ -762,7 +853,7 @@ footer .footer-div .footer-section1 .socials {
 	margin-top: 28px;
 }
 
-footer .footer-div .footer-section1 .socials img {
+footer .footer-div .footer-section1 .socials a {
 	margin-left: 8px;
 }
 
