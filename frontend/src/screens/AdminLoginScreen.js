@@ -6,13 +6,13 @@ import Logo from '../images/logo.svg'
 
 const AdminLoginScreen = () => {
     const history = useHistory()
-    const [userName, setUserName] = useState("")
+    const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [errorMsg, setErrorMsg] = useState("null")
+    const [errorMsg, setErrorMsg] = useState(null)
 
     const onClickLogin = (e) => {
         e.preventDefault()
-        if(userName === "") {
+        if(email === "") {
             setErrorMsg("Enter Username")
             return;
         }
@@ -22,18 +22,19 @@ const AdminLoginScreen = () => {
         }
 
         const data = {
-            userName : userName ,
+            email : email ,
             password : password
         } 
         
         axios.post("/login", data)
             .then (response => {
-                console.log(response)
+                console.log(response.data)
+                localStorage.setItem("accessToken", response.data.token)
                 history.push("/admin")
             })
             .catch(err => {
-                console.error(err)
-                setErrorMsg(err.data.message)
+                console.error(err.response)
+                //setErrorMsg(err.data.message)
             })
 
     }
@@ -53,11 +54,11 @@ const AdminLoginScreen = () => {
                         </div>
                         : null}
 
-                    <input value={userName} placeholder="Enter Username" type="text"
-                        onChange={(e) => { setUserName(e.target.value) }} />
+                    <input value={email} placeholder="Enter Username" type="text"
+                        onChange={(e) => { setEmail(e.target.value) }} />
                     <input value={password} placeholder="Enter Password" type="password"
                         onChange={(e) => { setPassword(e.target.value) }} />
-                    <button>Login</button>
+                    <button type = "submit">Login</button>
                 </form>
             </div>
         </div>
