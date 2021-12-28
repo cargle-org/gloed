@@ -1,7 +1,6 @@
 {
   "name": "gloed",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -16,5 +15,13 @@
   "bugs": {
     "url": "https://github.com/Johnson-olaolu/gloed/issues"
   },
-  "homepage": "https://github.com/Johnson-olaolu/gloed#readme"
+  "homepage": "https://github.com/Johnson-olaolu/gloed#readme",
+  "description": "",
+  "dependencies": {
+    "axios": "^0.24.0",
+    "cookie-parser": "^1.4.6",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.2",
+    "mongoose": "^6.1.3"
+  }
 }

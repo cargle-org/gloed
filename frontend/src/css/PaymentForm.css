@@ -1,0 +1,122 @@
+.payment-form-background {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(22, 94, 201, 0.15);
+    /* z-index: 1000; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.payment-form-background  .close-icon{
+    position: absolute;
+    right: 50px;
+    top: 16px;
+}
+.payment-form {
+    width: 400px;
+    border-radius: 8px;
+    background: #ffffff;
+    box-shadow: 5px 5px 25px rgba(0, 0, 0, 0.25);
+    height: 600px;
+    padding: 32px;
+}
+
+.payment-form  h2 {
+    text-align: center;
+    font-family: 'Gilroy', sans-serif;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 36px;
+	line-height: 101.1%;
+	text-align: center;
+	letter-spacing: -0.02em;
+	color: #4588EC;
+    margin-bottom: 36px;
+}
+
+.payment-form .payment-desc-div {
+    margin-bottom: 24px;
+}
+
+.payment-form  input  {
+    margin-bottom: 32px;
+    font-family: 'Gilroy', sans-serif;
+    height: 24px;
+    outline: none;
+    display: block;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid  #4588EC; 
+    font-size: 18px;
+}
+
+.payment-form .payment-dropdown {
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
+}
+.payment-form .payment-dropdown .selected-text{
+    background: white;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    font-weight: 500;
+    border: 1px solid #4588EC;
+}
+
+.payment-form .payment-dropdown .selected-text span {
+    padding: 8px 16px;
+    font-family: 'Gilroy', sans-serif;
+    font-size: 18px;
+    color: #4588EC;
+}
+
+.payment-form .payment-dropdown .selected-text .dropdown-icon {
+    width: 36px;
+    border-left: solid 1px #4588EC;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.payment-form .payment-dropdown .dropdown-list {
+    width: 100%;
+    background: #ffffff;
+}
+
+.payment-form .payment-dropdown .dropdown-list  span {
+    padding: 4px 16px;
+    font-size: 16px;
+    font-family: 'Gilroy', sans-serif;
+    display: block;
+    color: #4588EC;
+}
+
+.payment-form .payment-dropdown .dropdown-list  span:hover {
+    background-color: #4588EC;
+    color: white;
+}
+
+.payment-form .payment-plan {
+    font-family: 'Gilroy', sans-serif;
+    font-size: 18px;
+}
+
+.payment-form .register-button {
+    margin-top: 48px;
+    font-family: 'Gilroy', sans-serif;
+    font-weight: 500;
+    height: 40px;
+    background: #4588EC;
+    border-radius: 2px;
+    color: white;
+    font-size: 18px;
+    width: 100%;
+    border: none;
+    cursor: pointer;
+}
+
+

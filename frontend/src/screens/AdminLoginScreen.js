@@ -26,10 +26,10 @@ const AdminLoginScreen = () => {
             password : password
         } 
         
-        axios.post("/login", data)
+        axios.post("/api/login", data)
             .then (response => {
                 console.log(response.data)
-                localStorage.setItem("accessToken", response.data.token)
+                localStorage.setItem("loggedIn", "true")
                 history.push("/admin")
             })
             .catch(err => {

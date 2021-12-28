@@ -29,9 +29,9 @@ const { notFound, errorHandler } = require('./middleware')
 
 app.use("/api", routes)
 
-app.use('/*', (req, res) => {
-    res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
-});
+// app.use('/*', (req, res) => {
+//     res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+// });
 app.use(notFound, errorHandler)
 
  

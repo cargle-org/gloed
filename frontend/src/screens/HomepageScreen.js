@@ -6,21 +6,23 @@ import SlackImage from '../images/slack.svg'
 import AboutUsImage from '../images/about-us-image.svg'
 import PersonaImg from '../images/testimonial-card-img.svg'
 import FoooterDesign from '../images/footer-design.svg'
-
 import Logo2 from '../images/logo2.svg'
 import SocialInstagram from '../images/social/instagram.svg'
 import SocialTwitter from '../images/social/twitter.svg'
 import SocialLinkedIn from '../images/social/linkedIn.svg'
 import SocialSlack from '../images/social/slack.svg'
 import axios from "axios"
+import PaymentForm from "../components/PaymentForm"
 
 
 const HomepageScreen = () => {
     const [siteText, setSiteText] = useState({})
     const [selectedCourse, setSelectedCourse] = useState("sql")
     const [menuOpen, setMenuOpen] = useState(false)
+    const [viewModal, setViewModal] = useState(false)
+    const [selectedPlan, setSelectedPlan] = useState("")
     useEffect(() => {
-        axios.get("/site-text")
+        axios.get("/api/site-text")
             .then(response => {
                 setSiteText(response.data.siteText.data)
             })
@@ -196,7 +198,8 @@ const HomepageScreen = () => {
                                     <span className="plan-banner">
                                         {siteText.sqlCard1Price}
                                     </span>
-                                    <a href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="start-here">
+                                    <div className="start-here"
+                                        onClick = {() => {setViewModal(true); setSelectedPlan(siteText.sqlCard1Price)} }>
                                         <div className="start-here-div">
                                             <div className="start-here-div-div1">
                                                 Start here
@@ -207,7 +210,7 @@ const HomepageScreen = () => {
                                                 </svg>
                                             </div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
                                 <div className="price-plan-2">
                                     <p className="plan-name">{siteText.sqlCard2Title}</p>
@@ -221,7 +224,8 @@ const HomepageScreen = () => {
                                     <span className="plan-banner">
                                         {siteText.sqlCard2Price}
                                     </span>
-                                    <a href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="start-here">
+                                    <div className="start-here"
+                                        onClick = {() => {setViewModal(true); setSelectedPlan(siteText.sqlCard2Price)} }>
                                         <div className="start-here-div">
                                             <div className="start-here-div-div1">
                                                 Start here
@@ -232,7 +236,7 @@ const HomepageScreen = () => {
                                                 </svg>
                                             </div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
                                 <div className="price-plan-3">
                                     <p className="plan-name">{siteText.sqlCard3Title}</p>
@@ -246,7 +250,8 @@ const HomepageScreen = () => {
                                     <span className="plan-banner">
                                         {siteText.sqlCard3Price}
                                     </span>
-                                    <a href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="start-here">
+                                    <div className="start-here"
+                                        onClick = {() => {setViewModal(true); setSelectedPlan(siteText.sqlCard3Price)} }>
                                         <div className="start-here-div">
                                             <div className="start-here-div-div1">
                                                 Start here
@@ -257,7 +262,7 @@ const HomepageScreen = () => {
                                                 </svg>
                                             </div>
                                         </div>
-                                    </a>
+                                    </div>
                                 </div>
                             </div>
                             :
@@ -494,6 +499,9 @@ const HomepageScreen = () => {
                     </div>
                 </div>
             </footer>
+            {viewModal ?
+                <PaymentForm setViewModal = {setViewModal} siteText = {siteText} selectedPlan={ selectedPlan}/> :
+                null}
         </>
     )
 }
