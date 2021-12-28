@@ -1,0 +1,34 @@
+{
+  "files": {
+    "main.css": "/static/css/main.39836bd3.chunk.css",
+    "main.js": "/static/js/main.8d0894ea.chunk.js",
+    "main.js.map": "/static/js/main.8d0894ea.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ff5b8ea4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ff5b8ea4.js.map",
+    "static/js/2.4aa7fd64.chunk.js": "/static/js/2.4aa7fd64.chunk.js",
+    "static/js/2.4aa7fd64.chunk.js.map": "/static/js/2.4aa7fd64.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/main.39836bd3.chunk.css.map": "/static/css/main.39836bd3.chunk.css.map",
+    "static/js/2.4aa7fd64.chunk.js.LICENSE.txt": "/static/js/2.4aa7fd64.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/Monument Extended.0d9895e9.woff",
+    "static/media/about-us-image.02792dcf.svg": "/static/media/about-us-image.02792dcf.svg",
+    "static/media/caret-down.64fec91f.svg": "/static/media/caret-down.64fec91f.svg",
+    "static/media/close.92415fc1.svg": "/static/media/close.92415fc1.svg",
+    "static/media/footer-design.b2578176.svg": "/static/media/footer-design.b2578176.svg",
+    "static/media/instagram.f8c1c558.svg": "/static/media/instagram.f8c1c558.svg",
+    "static/media/jumbotron-img.bda27bb7.svg": "/static/media/jumbotron-img.bda27bb7.svg",
+    "static/media/linkedIn.0148aa16.svg": "/static/media/linkedIn.0148aa16.svg",
+    "static/media/logo.884c9b3e.svg": "/static/media/logo.884c9b3e.svg",
+    "static/media/logo2.53fba8c9.svg": "/static/media/logo2.53fba8c9.svg",
+    "static/media/slack.6b33d919.svg": "/static/media/slack.6b33d919.svg",
+    "static/media/slack.c08658ae.svg": "/static/media/slack.c08658ae.svg",
+    "static/media/testimonial-card-img.366e1bf2.svg": "/static/media/testimonial-card-img.366e1bf2.svg",
+    "static/media/twitter.0a42120d.svg": "/static/media/twitter.0a42120d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ff5b8ea4.js",
+    "static/js/2.4aa7fd64.chunk.js",
+    "static/css/main.39836bd3.chunk.css",
+    "static/js/main.8d0894ea.chunk.js"
+  ]
+}
