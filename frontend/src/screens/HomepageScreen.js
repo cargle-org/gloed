@@ -1,4 +1,5 @@
 import "../css/App.css"
+import { AtSign, Mail} from "react-feather"
 import { useEffect, useState } from 'react'
 import Logo from '../images/logo.svg'
 import JumbotronImage from '../images/jumbotron-img.svg'
@@ -21,12 +22,50 @@ const HomepageScreen = () => {
     const [menuOpen, setMenuOpen] = useState(false)
     const [viewModal, setViewModal] = useState(false)
     const [selectedPlan, setSelectedPlan] = useState("")
+    const [selectedPrice, setSelectedPrice] = useState("")
+
     useEffect(() => {
-        axios.get("/api/site-text")
+        axios.get("https://gloed-server.herokuapp.com/api/site-text")
             .then(response => {
                 setSiteText(response.data.siteText.data)
+                console.log(response)
             })
     }, [])
+
+    const gotoAbout = () => {
+        const aboutTop = document.getElementById("about-us").offsetTop
+        console.log(aboutTop)
+        window.scrollTo({
+            top: aboutTop,
+            left: 0,
+            behavior: 'smooth'
+        });
+        setMenuOpen(false)
+    }
+
+    const gotoPricing = () => {
+        const pricingTop = document.getElementById("available-courses").offsetTop
+        console.log(pricingTop)
+        window.scrollTo({
+            top: pricingTop,
+            left: 0,
+            behavior: 'smooth'
+        });
+        setMenuOpen(false)
+    }
+
+    const gotoTestimonials = () => {
+        // const testimonialTop = document.getElementById("testimonials").offsetTop
+        // console.log(testimonialTop)
+        // window.scrollTo({
+        //     top: testimonialTop,
+        //     left: 0,
+        //     behavior: 'smooth'
+        // });
+        // setMenuOpen(false)
+    }
+
+
     return (
         <>
             <header>
@@ -38,9 +77,9 @@ const HomepageScreen = () => {
                         </div>
                         <div className="header-menu">
                             <ul className="">
-                                <li className=""><a href="#about-us" className="">{siteText.headerMenu1}</a></li>
-                                <li className=""><a href="#available-courses" className="">{siteText.headerMenu2}</a></li>
-                                <li className=""><a href="#testimonials" className="">{siteText.headerMenu3}</a></li>
+                                <li className=""><span onClick={gotoAbout} href="#" className="">{siteText.headerMenu1}</span></li>
+                                <li className=""><span onClick={gotoPricing} className="">{siteText.headerMenu2}</span></li>
+                                {/* <li className=""><span onClick={gotoTestimonials} className="">{siteText.headerMenu3}</span></li> */}
                             </ul>
                         </div>
                         <div className="mobile-menu">
@@ -52,9 +91,9 @@ const HomepageScreen = () => {
                             </div>
                             {menuOpen ?
                                 <ul className="">
-                                    <li className=""><a href="#about-us" className="">{siteText.headerMenu1}</a></li>
-                                    <li className=""><a href="#available-courses" className="">{siteText.headerMenu2}</a></li>
-                                    <li className=""><a href="#testimonials" className="">{siteText.headerMenu3}</a></li>
+                                    <li className=""><span onClick={gotoAbout} href="#about-us" className="">{siteText.headerMenu1}</span></li>
+                                    <li className=""><span onClick={gotoPricing} href="#available-courses" className="">{siteText.headerMenu2}</span></li>
+                                    {/* <li className=""><span onClick={gotoTestimonials} href="#testimonials" className="">{siteText.headerMenu3}</span></li> */}
                                 </ul> :
                                 null
                             }
@@ -99,7 +138,7 @@ const HomepageScreen = () => {
                                 {siteText.jumbotronText3part2}
                             </strong>
                         </p>
-                        <a href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="join-slack">
+                        <a target="_blank" rel="noreferrer" href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="join-slack">
                             <div className="join-slack-button">
                                 <div className="join-slack-button-div1">
                                     JOIN SLACK COMMUNITY
@@ -113,7 +152,7 @@ const HomepageScreen = () => {
                         </a>
 
                         <div className="circle-down">
-                            <svg width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg onClick={gotoAbout} width="31" height="31" viewBox="0 0 31 31" fill="none" xmlns="http://www.w3.org/2000/svg">
                                 <path fill-rule="evenodd" clip-rule="evenodd" d="M1.9375 15.5C1.9375 19.097 3.3664 22.5467 5.90986 25.0901C8.45333 27.6336 11.903 29.0625 15.5 29.0625C19.097 29.0625 22.5467 27.6336 25.0901 25.0901C27.6336 22.5467 29.0625 19.097 29.0625 15.5C29.0625 11.903 27.6336 8.45333 25.0901 5.90986C22.5467 3.3664 19.097 1.9375 15.5 1.9375C11.903 1.9375 8.45333 3.3664 5.90986 5.90986C3.3664 8.45333 1.9375 11.903 1.9375 15.5ZM31 15.5C31 19.6109 29.367 23.5533 26.4602 26.4602C23.5533 29.367 19.6109 31 15.5 31C11.3891 31 7.44666 29.367 4.53984 26.4602C1.63303 23.5533 0 19.6109 0 15.5C0 11.3891 1.63303 7.44666 4.53984 4.53984C7.44666 1.63303 11.3891 0 15.5 0C19.6109 0 23.5533 1.63303 26.4602 4.53984C29.367 7.44666 31 11.3891 31 15.5ZM16.4688 9.71875C16.4688 9.46182 16.3667 9.21542 16.185 9.03374C16.0033 8.85206 15.7569 8.75 15.5 8.75C15.2431 8.75 14.9967 8.85206 14.815 9.03374C14.6333 9.21542 14.5312 9.46182 14.5312 9.71875V18.9427L10.3734 14.7829C10.1915 14.601 9.94475 14.4988 9.6875 14.4988C9.43025 14.4988 9.18353 14.601 9.00162 14.7829C8.81972 14.9648 8.71753 15.2115 8.71753 15.4688C8.71753 15.726 8.81972 15.9727 9.00162 16.1546L14.8141 21.9671C14.9041 22.0573 15.011 22.1289 15.1287 22.1778C15.2464 22.2266 15.3726 22.2517 15.5 22.2517C15.6274 22.2517 15.7536 22.2266 15.8713 22.1778C15.989 22.1289 16.0959 22.0573 16.1859 21.9671L21.9984 16.1546C22.1803 15.9727 22.2825 15.726 22.2825 15.4688C22.2825 15.2115 22.1803 14.9648 21.9984 14.7829C21.8165 14.601 21.5698 14.4988 21.3125 14.4988C21.0552 14.4988 20.8085 14.601 20.6266 14.7829L16.4688 18.9427V9.71875Z" fill="black" />
                             </svg>
                         </div>
@@ -188,7 +227,7 @@ const HomepageScreen = () => {
                             ? <div className="prices">
                                 <div className="price-plan-1">
                                     <p className="plan-name">{siteText.sqlCard1Title}</p>
-                                    <h6 className="plan-price">{siteText.sqlCard1Price}</h6>
+                                    <h6 className="plan-price"> {siteText.sqlCard1Price}</h6>
                                     <p className="plan-description">
                                         {siteText.sqlCard1Description}
                                     </p>
@@ -199,7 +238,7 @@ const HomepageScreen = () => {
                                         {siteText.sqlCard1Price}
                                     </span>
                                     <div className="start-here"
-                                        onClick = {() => {setViewModal(true); setSelectedPlan(siteText.sqlCard1Price)} }>
+                                        onClick={() => { setViewModal(true); setSelectedPlan(siteText.sqlCard1Title); setSelectedPrice(siteText.sqlCard1Price) }}>
                                         <div className="start-here-div">
                                             <div className="start-here-div-div1">
                                                 Start here
@@ -214,7 +253,7 @@ const HomepageScreen = () => {
                                 </div>
                                 <div className="price-plan-2">
                                     <p className="plan-name">{siteText.sqlCard2Title}</p>
-                                    <h6 className="plan-price">{siteText.sqlCard2Price}</h6>
+                                    <h6 className="plan-price">₦{new Intl.NumberFormat("en-US").format(siteText.sqlCard2Price)}</h6>
                                     <p className="plan-description">
                                         {siteText.sqlCard2Description}
                                     </p>
@@ -222,10 +261,10 @@ const HomepageScreen = () => {
                                         {siteText.sqlCard2Time}
                                     </p>
                                     <span className="plan-banner">
-                                        {siteText.sqlCard2Price}
+                                        ₦{new Intl.NumberFormat("en-US").format(siteText.sqlCard2Price)}
                                     </span>
                                     <div className="start-here"
-                                        onClick = {() => {setViewModal(true); setSelectedPlan(siteText.sqlCard2Price)} }>
+                                        onClick={() => { setViewModal(true); setSelectedPlan(siteText.sqlCard2Title); setSelectedPrice(siteText.sqlCard2Price) }}>
                                         <div className="start-here-div">
                                             <div className="start-here-div-div1">
                                                 Start here
@@ -240,7 +279,7 @@ const HomepageScreen = () => {
                                 </div>
                                 <div className="price-plan-3">
                                     <p className="plan-name">{siteText.sqlCard3Title}</p>
-                                    <h6 className="plan-price">{siteText.sqlCard3Price}</h6>
+                                    <h6 className="plan-price">₦{new Intl.NumberFormat("en-US").format(siteText.sqlCard3Price)}</h6>
                                     <p className="plan-description">
                                         {siteText.sqlCard3Description}
                                     </p>
@@ -248,10 +287,10 @@ const HomepageScreen = () => {
                                         {siteText.sqlCard3Time}
                                     </p>
                                     <span className="plan-banner">
-                                        {siteText.sqlCard3Price}
+                                        ₦{new Intl.NumberFormat("en-US").format(siteText.sqlCard3Price)}
                                     </span>
                                     <div className="start-here"
-                                        onClick = {() => {setViewModal(true); setSelectedPlan(siteText.sqlCard3Price)} }>
+                                        onClick={() => { setViewModal(true); setSelectedPlan(siteText.sqlCard3Title); setSelectedPrice(siteText.sqlCard3Price) }}>
                                         <div className="start-here-div">
                                             <div className="start-here-div-div1">
                                                 Start here
@@ -324,7 +363,7 @@ const HomepageScreen = () => {
                                 <strong>{siteText.joinOurCommunityText3part2}</strong>
                             </p>
                         </div>
-                        <a href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="join-slack">
+                        <a target="_blank" rel="noreferrer" href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="join-slack">
                             <div className="join-slack-button">
                                 <div className="join-slack-button-div1">
                                     JOIN SLACK COMMUNITY
@@ -364,12 +403,12 @@ const HomepageScreen = () => {
                                     <span className="main-text">{siteText.experienceText1}</span>
                                     <span className="sub-text">{siteText.experienceText2}</span>
                                 </div>
-                                <div className="">
+                                {/* <div className="">
                                     <span className="main-text">{siteText.trainedText1}</span>
                                     <span className="sub-text">{siteText.trainedText2}</span>
-                                </div>
+                                </div> */}
                             </div>
-                            <a href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="join-slack">
+                            <a target="_blank" rel="noreferrer" href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="join-slack">
                                 <div className="join-slack-button">
                                     <div className="join-slack-button-div1">
                                         JOIN SLACK COMMUNITY
@@ -385,7 +424,7 @@ const HomepageScreen = () => {
                     </div>
                 </section>
                 {/* testimonials */}
-                <section id="testimonials" className="testimonials">
+                {/* <section id="testimonials" className="testimonials">
                     <h2 className="feedback ">feedback</h2>
                     <h4 className="testimonials-text">Testimonials</h4>
                     <div className="testimonials-carousel">
@@ -433,36 +472,11 @@ const HomepageScreen = () => {
                                     </div>
                                 </div>
                             </li>
-                            {/* <li className="testimonial-card item-c">
-                            <p className="testimonial-card-text">
-                                “The platform has a slick experience, that was so easy to use.
-                                I feel so less stressed as i know we are doing everything by the book.”
-                            </p>
-                            <div className="testimonail-persona">
-                                <img src={PersonaImg} alt="" className="" />
-                                <div className="testimonial-persona-text">
-                                    <h6 className="testimonial-persona-name">Kirko Bangs</h6>
-                                    <span className="testimonial-persona-name-credentials">Founder at Bangs INC</span>
-                                </div>
-                            </div>
-                        </li>
-                        <li className="testimonial-card item-d">
-                            <p className="testimonial-card-text">
-                                “The platform has a slick experience, that was so easy to use.
-                                I feel so less stressed as i know we are doing everything by the book.”
-                            </p>
-                            <div className="testimonail-persona">
-                                <img src={PersonaImg} alt="" className="" />
-                                <div className="testimonial-persona-text">
-                                    <h6 className="testimonial-persona-name">Kirko Bangs</h6>
-                                    <span className="testimonial-persona-name-credentials">Founder at Bangs INC</span>
-                                </div>
-                            </div>
-                        </li> */}
+                            
                         </ul>
 
                     </div>
-                </section>
+                </section> */}
             </section>
             {/* footer */}
             <footer>
@@ -474,22 +488,22 @@ const HomepageScreen = () => {
                                 <img src={Logo2} alt="" className="" />
                             </div>
                             <div className="socials">
-                                <a href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ"><img src={SocialSlack} alt="" className="" /></a>
-                                <a href="https://www.linkedin.com/company/gloed-co"><img src={SocialLinkedIn} alt="" className="" /></a>
-                                <a href="https://twitter.com/gloed_co"><img src={SocialTwitter} alt="" className="" /></a>
-                                <a href="https://www.instagram.com/gloed_co/"><img src={SocialInstagram} alt="" className="" /></a>
+                                <a href="mailto: contact@gloed.co" className="">
+                                    <div className=" email-icon">
+                                        <AtSign size={14} className="icon"/>
+                                    </div>
+                                </a>
+                                <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/company/gloed-co"><img src={SocialLinkedIn} alt="" className="" /></a>
+                                <a target="_blank" rel="noreferrer" href="https://twitter.com/gloed_co"><img src={SocialTwitter} alt="" className="" /></a>
+                                <a target="_blank" rel="noreferrer" href="https://www.instagram.com/gloed_co/"><img src={SocialInstagram} alt="" className="" /></a>
                             </div>
                         </div>
                         <div className="footer-menu">
-                            <ul className="footer-menu1">
-                                <li className="">Quicklinks</li>
-                                <li className=""><a href="#about-us" className="">About Us</a></li>
-                                <li className=""><a href="#testimonials" className="">Testimonials</a></li>
-                            </ul>
+                            
                             <ul className="footer-menu2">
                                 <li className="">Courses</li>
-                                <li className=""><a onClick={() => { setSelectedCourse("sql") }} href="#available-courses" className="">SQL Database</a></li>
-                                <li className=""><a onClick={() => { setSelectedCourse("excel") }} href="#available-courses" className="">MS Excell</a>.</li>
+                                <li className=""><span onClick={() => { setSelectedCourse("sql"); gotoPricing() }} className="">SQL</span></li>
+                                <li className=""><span onClick={() => { setSelectedCourse("excel"); gotoPricing() }} className="">Excel</span>.</li>
                             </ul>
                         </div>
                     </div>
@@ -500,7 +514,7 @@ const HomepageScreen = () => {
                 </div>
             </footer>
             {viewModal ?
-                <PaymentForm setViewModal = {setViewModal} siteText = {siteText} selectedPlan={ selectedPlan}/> :
+                <PaymentForm setViewModal={setViewModal} siteText={siteText} selectedPlan={selectedPlan} selectedPrice={selectedPrice} /> :
                 null}
         </>
     )

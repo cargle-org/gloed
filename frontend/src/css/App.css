@@ -95,13 +95,14 @@ header .header-div .header-menu ul li:last-child {
 	margin-right: 0;
 }
 
-header .header-div .header-menu ul li a {
+header .header-div .header-menu ul li span {
 	font-family: 'Gilroy', sans-serif;
 	font-weight: bold;
 	color: #363636;
 	text-decoration: none;
 	text-transform: uppercase;
 	letter-spacing: 0.065em;
+	cursor: pointer;
 }
 
 .mobile-menu {
@@ -139,7 +140,7 @@ header .header-div .header-menu ul li a {
 	font-family: 'Monument Extended', sans-serif;
 	font-style: normal;
 	font-weight: bold;
-	font-size: 48px;
+	font-size: 36px;
 	line-height: 49px;
 	letter-spacing: -0.02em;
 	color: #000000;
@@ -194,6 +195,10 @@ a.join-slack {
 
 .jumbotron .jumbotron-div1 .circle-down {
 	margin-top: 52px;
+}
+
+.jumbotron .jumbotron-div1 .circle-down  svg {
+	cursor: pointer;
 }
 
 .jumbotron .jumbotron-div2 {
@@ -575,7 +580,6 @@ a.join-slack {
 /* .about-us-and-testimonials */
 .about-us-and-testimonials {
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), rgba(253, 217, 97, 0.14);
-	min-height: 1432px;
 	padding-bottom: 172px;
 }
 
@@ -589,7 +593,7 @@ a.join-slack {
 .about-us-grid {
 	display: flex;
 	align-items: center;
-	flex-wrap: wrap;
+	flex-wrap: nowrap;
 }
 
 .about-us-grid .about-us-grid-div1 {
@@ -597,6 +601,7 @@ a.join-slack {
 }
 
 .about-us-grid .about-us-grid-text span {
+
 	text-transform: uppercase;
 	display: inline-block;
 	width: 200px;
@@ -647,7 +652,7 @@ a.join-slack {
 
 .about-us-grid .people-trained {
 	display: grid;
-	grid-template-columns: 1fr 1fr;
+	grid-template-columns: 1fr ;
 	gap: 60px;
 	margin-bottom: 48px;
 }
@@ -858,6 +863,20 @@ footer .footer-div .footer-section1 .socials a {
 	margin-left: 8px;
 }
 
+footer .footer-div .footer-section1 .socials a .email-icon {
+	height: 25px;
+	width: 25px;
+	border-radius: 1000px;
+	background-color: white;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+footer .footer-div .footer-section1 .socials a .email-icon .icon {
+	color: #4588EC;
+}
+
 footer .footer-div .footer-section1 .socials img:first-child {
 	margin-left: 0;
 }
@@ -888,13 +907,14 @@ footer .footer-div .footer-section1 .footer-menu ul li:first-child {
 
 footer .footer-div .footer-section1 .footer-menu ul li {
 	margin-bottom: 8px;
+	text-align: center;
 }
 
 footer .footer-div .footer-section1 .footer-menu ul li:last-child {
 	margin-bottom: 0px;
 }
 
-footer .footer-div .footer-section1 .footer-menu ul li a {
+footer .footer-div .footer-section1 .footer-menu ul li span {
 	font-family: 'Gilroy', sans-serif;
 	font-style: normal;
 	font-weight: 500;
@@ -903,6 +923,7 @@ footer .footer-div .footer-section1 .footer-menu ul li a {
 	letter-spacing: -0.02em;
 	color: #DAE9FF;
 	text-decoration: none;
+	cursor: pointer;
 }
 
 
@@ -962,6 +983,9 @@ footer .footer-div .footer-section2 .company-name {
 		padding-right: 32px;
 	}
 
+	.about-us-grid {
+		flex-wrap: wrap;
+	}
 	footer .footer-div {
 		padding-left: 32px;
 		padding-right: 32px;
@@ -1015,6 +1039,17 @@ footer .footer-div .footer-section2 .company-name {
 		margin-left: 0;
 		display: none;
 	}
+
+	.available-courses .pricing-div .prices>div .plan-banner {
+		color: rgba(255, 255, 255, 0.1);
+		bottom: calc(50px + 16px + 36px);
+	}
+
+	.available-courses .pricing-div .prices>div .start-here {
+		display: inline;
+		opacity: 1;
+		transition: opacity 1s ease;
+	}
 }
 
 @media (max-width : 498px) {
@@ -1061,13 +1096,14 @@ footer .footer-div .footer-section2 .company-name {
 		padding: 20px;
 	}
 
-	header .header-div .mobile-menu ul li a {
+	header .header-div .mobile-menu ul li span {
 		font-family: 'Gilroy', sans-serif;
 		font-weight: bold;
 		color: #363636;
 		text-decoration: none;
 		text-transform: uppercase;
 		letter-spacing: 0.065em;
+		cursor: pointer;
 	}
 
 	.available-courses .pricing-div .sql-or-excel {

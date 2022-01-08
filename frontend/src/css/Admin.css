@@ -614,7 +614,6 @@ a.join-slack {
 /* .about-us-and-testimonials */
 .about-us-and-testimonials {
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), rgba(253, 217, 97, 0.14);
-	min-height: 1432px;
 	padding-bottom: 172px;
 }
 

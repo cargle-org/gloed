@@ -26,10 +26,10 @@ const AdminLoginScreen = () => {
             password : password
         } 
         
-        axios.post("/api/login", data)
+        axios.post("https://gloed-server.herokuapp.com/api/login", data)
             .then (response => {
                 console.log(response.data)
-                localStorage.setItem("loggedIn", "true")
+                localStorage.setItem("accessToken", response.data.token)
                 history.push("/admin")
             })
             .catch(err => {

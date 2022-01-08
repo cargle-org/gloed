@@ -25,17 +25,18 @@ const AdminPageScreen = () => {
     const [siteText, setSiteText] = useState({})
 
     useEffect(() => {
-        var loggedIn = localStorage.getItem("loggedIn")
-        console.log(loggedIn)
-        if(!loggedIn) {
+        var token = localStorage.getItem("accessToken")
+        console.log(token)
+        if(!token) {
             history.push("/admin/login")
         }
 
         const headers = {
-            contentType : "application/json"
+            contentType : "application/json",
+            Authorization : "Bearer " + token
         }
         
-        axios.get("/api/site-text", {
+        axios.get("https://gloed-server.herokuapp.com/api/site-text", {
             headers : headers
         })
             .then(response => {
@@ -52,14 +53,14 @@ const AdminPageScreen = () => {
 
     const onClickSubmit = (e) => {
         e.preventDefault()
-        const accessToken = localStorage.getItem("accessToken")
+        const token = localStorage.getItem("accessToken")
         const data = siteText
         const headers = {
             contentType : "application/json",
-            authorization : "Bearer " + accessToken
+            Authorization : "Bearer " + token
         }
         
-        axios.post("/api/site-text",data, {
+        axios.post("https://gloed-server.herokuapp.com/api/site-text",data, {
             headers : headers
         })
             .then(response => {
@@ -443,12 +444,6 @@ const AdminPageScreen = () => {
                                             onChange = {(e) => {setSiteText({...siteText, experienceText1 : e.target.value})}} /></span>
                                         <span className="sub-text"><input type="text" value={siteText.experienceText2} 
                                             onChange = {(e) => {setSiteText({...siteText, experienceText2 : e.target.value})}}/></span>
-                                    </div>
-                                    <div className="">
-                                        <span className="main-text"><input type="text" value={siteText.trainedText1}
-                                            onChange = {(e) => {setSiteText({...siteText, trainedText1 : e.target.value})}} /></span>
-                                        <span className="sub-text"><input type="text" value={siteText.trainedText2} 
-                                            onChange = {(e) => {setSiteText({...siteText, trainedText2 : e.target.value})}}/></span>
                                     </div>
                                 </div>
                                 <a href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="join-slack">

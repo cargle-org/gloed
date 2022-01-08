@@ -4,9 +4,12 @@ const path = require('path')
 const app = express()
 const mongoose = require('mongoose')
 const dotenv = require('dotenv')
+const cors = require('cors')
+app.use(cors())
 app.use(express.json())
 app.use(cookieParser())
-app.use(express.static(path.join(__dirname , "../frontend/build")));
+//app.use(express.static(path.join(__dirname , "../frontend/build")));
+
 
 dotenv.config()
 
@@ -34,7 +37,7 @@ app.use("/api", routes)
 // });
 app.use(notFound, errorHandler)
 
- 
-app.listen(process.env.PORT, () => {
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
     console.log("app listening")
 })
