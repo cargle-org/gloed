@@ -577,6 +577,68 @@ a.join-slack {
 	color: #363636;
 }
 
+/* Contact Us */
+.contact-us{
+	height: 70vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	box-shadow: 0px 4px 30px 5px rgba(0, 0, 0, 0.04);
+}
+
+.contact-us .contact-us-grid .contact-us-heading{
+	font-family: 'Monument Extended', sans-serif;
+	line-height: 101.1%;
+	text-align: center;
+    letter-spacing: -0.02em;
+    color: #4588EC;
+	font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+}
+
+.contact-us .contact-us-grid .contact-us-buttons{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin: 3rem auto;
+}
+
+.contact-us .contact-us-grid .contact-us-buttons .contact-us-email, .contact-us-whatsapp{
+	display: inline-flex;
+	margin: 1rem;
+	min-width: 300px;
+	white-space: nowrap;
+	box-shadow: 0px 4px 20px 10px rgb(0 0 0 / 5%);
+	cursor: pointer;
+	text-decoration: none;
+}
+
+.contact-us .contact-us-grid .contact-us-buttons .contact-us-email .contact-us-email-div1, .contact-us-whatsapp-div1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    font-family: 'Gilroy', sans-serif;
+    font-size: 18px;
+    line-height: 150.7%;
+    text-align: center;
+    letter-spacing: -0.01em;
+    background: #4588EC;
+    color: #FFFFFF;
+	padding: 1rem 2rem;
+	text-decoration: none;
+}
+
+.contact-us .contact-us-grid .contact-us-buttons .contact-us-email .contact-us-email-div2, .contact-us-whatsapp-div2{
+	display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    background: #165EC9;
+}
+
 /* .about-us-and-testimonials */
 .about-us-and-testimonials {
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), rgba(253, 217, 97, 0.14);
@@ -852,7 +914,7 @@ footer .footer-div .footer-section1 {
 	flex-wrap: wrap;
 }
 
-footer .footer-div .footer-section1 .logo {}
+/* footer .footer-div .footer-section1 .logo {} */
 
 footer .footer-div .footer-section1 .socials {
 	display: flex;
@@ -936,6 +998,14 @@ footer .footer-div .footer-section2 {
 	border-top: solid 2px white;
 }
 
+footer .footer-div .footer-section2 .privacy-policy{
+	text-decoration: none;
+	color: white;
+	font-family: 'Gilroy', sans-serif;
+	font-size: 1rem;
+	font-weight: 600;
+}
+
 footer .footer-div .footer-section2 .copyright {
 	font-family: 'Gilroy', sans-serif;
 	font-style: normal;
@@ -955,6 +1025,71 @@ footer .footer-div .footer-section2 .company-name {
 	text-align: right;
 	letter-spacing: -0.02em;
 	color: #FFFFFF;
+}
+/* Privacy Policy*/
+.privacy-policy-screen{
+	background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #EBF3FF;
+	min-height: 100vh;
+}
+
+
+.privacy-policy-header{
+	padding: 1.5rem 2rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	box-shadow: 0px 4px 30px 5px rgb(0 0 0 / 4%);
+}
+
+.privacy-policy-header > a{
+	font-family: 'Gilroy', sans-serif;
+	text-decoration: none;
+	color: black;
+	text-transform: uppercase;
+	font-weight: 600;
+    letter-spacing: 0.065em;
+}
+
+.privacy-section{
+	width: 60%;
+	margin: 0 auto;
+	padding: 4rem 0;
+	font-family: 'Gilroy', sans-serif;
+}
+
+.privacy-section .privacy-title{
+	margin: 1rem 0;
+}
+
+.privacy-section .privacy-title h2{
+	font-size: 1.2rem;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #4588EC;
+}
+.privacy-section .privacy-title p{
+	font-size: .5rem;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	color: #4588EC;
+}
+
+.privacy-section .privacy-sub-title{
+	margin: 1rem 0;
+	font-size: 1.2rem;
+}
+
+.privacy-section .privacy-text{
+	color: #646464;
+	font-size: 1rem;
+	line-height: 2rem;
+	text-align: justify;
+}
+
+.privacy-section .privacy-text a{
+	color: #4588EC;
+	text-decoration: none;
+	font-weight: 600;
 }
 
 
@@ -990,6 +1125,10 @@ footer .footer-div .footer-section2 .company-name {
 		padding-left: 32px;
 		padding-right: 32px;
 	}
+	.privacy-section{
+		width: 70%;
+	}
+	
 }
 
 @media (max-width : 798px) {
@@ -1050,6 +1189,16 @@ footer .footer-div .footer-section2 .company-name {
 		opacity: 1;
 		transition: opacity 1s ease;
 	}
+	.privacy-section{
+		width: 80%;
+	}
+	
+}
+
+@media (max-width: 710px) {
+	.contact-us .contact-us-grid .contact-us-buttons{
+		flex-direction: column;
+	}
 }
 
 @media (max-width : 498px) {
@@ -1062,8 +1211,6 @@ footer .footer-div .footer-section2 .company-name {
 		display: block;
 		position: relative;
 	}
-
-
 
 	.mobile-menu .burger-menu>div {
 		width: 32px;
@@ -1127,4 +1274,9 @@ footer .footer-div .footer-section2 .company-name {
 	.logo-social {
 		margin-bottom: 32px;
 	}
+
+	.privacy-section{
+		width: 85%;
+	}
+	
 }

@@ -1,4 +1,5 @@
 import "../css/App.css"
+import { Link } from "react-router-dom"
 import { AtSign, Mail} from "react-feather"
 import { useEffect, useState } from 'react'
 import Logo from '../images/logo.svg'
@@ -54,16 +55,27 @@ const HomepageScreen = () => {
         setMenuOpen(false)
     }
 
-    const gotoTestimonials = () => {
-        // const testimonialTop = document.getElementById("testimonials").offsetTop
-        // console.log(testimonialTop)
-        // window.scrollTo({
-        //     top: testimonialTop,
-        //     left: 0,
-        //     behavior: 'smooth'
-        // });
-        // setMenuOpen(false)
+    const gotoContact = () => {
+        const contactTop = document.getElementById("contact-us").offsetTop
+        console.log(contactTop)
+        window.scrollTo({
+            top: contactTop,
+            left: 0,
+            behavior: 'smooth'
+        });
+        setMenuOpen(false)
     }
+
+    // const gotoTestimonials = () => {
+    //     // const testimonialTop = document.getElementById("testimonials").offsetTop
+    //     // console.log(testimonialTop)
+    //     // window.scrollTo({
+    //     //     top: testimonialTop,
+    //     //     left: 0,
+    //     //     behavior: 'smooth'
+    //     // });
+    //     // setMenuOpen(false)
+    // }
 
 
     return (
@@ -79,6 +91,7 @@ const HomepageScreen = () => {
                             <ul className="">
                                 <li className=""><span onClick={gotoAbout} href="#" className="">{siteText.headerMenu1}</span></li>
                                 <li className=""><span onClick={gotoPricing} className="">{siteText.headerMenu2}</span></li>
+                                <li className=""><span onClick={gotoContact} className="">Contact us</span></li>
                                 {/* <li className=""><span onClick={gotoTestimonials} className="">{siteText.headerMenu3}</span></li> */}
                             </ul>
                         </div>
@@ -342,6 +355,9 @@ const HomepageScreen = () => {
                     </div>
                 </div>
             </section>
+
+          
+
             {/* join our slack */}
             <section className="join-our-slack">
                 <div className="join-our-slack-grid">
@@ -378,6 +394,28 @@ const HomepageScreen = () => {
                     </div>
                     <div className="join-our-slack-grid-div2">
                         <img src={SlackImage} alt="" className="" />
+                    </div>
+                </div>
+            </section>
+
+            <section className="contact-us" id='contact-us'>
+                <div className="contact-us-grid">
+                    <h2 className="contact-us-heading">
+                        Contact Us
+                    </h2>
+                    <div className="contact-us-buttons">
+                        <a href='mailto:hi@gloed.co' className="contact-us-email">
+                            <div className="contact-us-email-div1">EMAIL</div>
+                              <div class="contact-us-email-div2">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 16H2V2H9V0H2C0.89 0 0 0.9 0 2V16C0 17.1 0.89 18 2 18H16C17.1 18 18 17.1 18 16V9H16V16ZM11 0V2H14.59L4.76 11.83L6.17 13.24L16 3.41V7H18V0H11Z" fill="#FDD961"></path></svg>
+                              </div>
+                          </a>
+                        <a href='tel:+2349066821545' className="contact-us-whatsapp">
+                            <div className="contact-us-whatsapp-div1">WHATSAPP</div>
+                              <div class="contact-us-whatsapp-div2">
+                                <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 16H2V2H9V0H2C0.89 0 0 0.9 0 2V16C0 17.1 0.89 18 2 18H16C17.1 18 18 17.1 18 16V9H16V16ZM11 0V2H14.59L4.76 11.83L6.17 13.24L16 3.41V7H18V0H11Z" fill="#FDD961"></path></svg>
+                                </div>
+                         </a>
                     </div>
                 </div>
             </section>
@@ -488,11 +526,12 @@ const HomepageScreen = () => {
                                 <img src={Logo2} alt="" className="" />
                             </div>
                             <div className="socials">
-                                <a href="mailto: contact@gloed.co" className="">
+                                {/* <a href="mailto: contact@gloed.co" className="">
                                     <div className=" email-icon">
                                         <AtSign size={14} className="icon"/>
                                     </div>
-                                </a>
+                                </a> */}
+                                <a target="_blank" rel="noreferrer" href="https://gloedworkspac.slack.com/join/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ#/shared-invite/email"><img src={SocialSlack} alt="" className="" /></a>
                                 <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/company/gloed-co"><img src={SocialLinkedIn} alt="" className="" /></a>
                                 <a target="_blank" rel="noreferrer" href="https://twitter.com/gloed_co"><img src={SocialTwitter} alt="" className="" /></a>
                                 <a target="_blank" rel="noreferrer" href="https://www.instagram.com/gloed_co/"><img src={SocialInstagram} alt="" className="" /></a>
@@ -508,6 +547,7 @@ const HomepageScreen = () => {
                         </div>
                     </div>
                     <div className="footer-section2">
+                        <Link className="privacy-policy" to='/privacy-policy'>Privacy Policy</Link>
                         <span className="copyright">©  <strong>2021 </strong> All rights Reservered</span>
                         <span className="company-name">Gloed.co</span>
                     </div>
