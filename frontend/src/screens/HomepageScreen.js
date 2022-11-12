@@ -1,5 +1,5 @@
 import "../css/App.css"
-import { AtSign, Mail} from "react-feather"
+import { AtSign, Mail } from "react-feather"
 import { useEffect, useState } from 'react'
 import Logo from '../images/logo.svg'
 import JumbotronImage from '../images/jumbotron-img.svg'
@@ -229,7 +229,7 @@ const HomepageScreen = () => {
                                     <p className="plan-name">{siteText.sqlCard1Title}</p>
                                     <h6 className="plan-price"> {siteText.sqlCard1Price}</h6>
                                     <p className="plan-description">
-                                        {siteText.sqlCard1Description}
+                                        Join Our free class Sat 12  Nov 8:00pm
                                     </p>
                                     <p className="plan-time">
                                         {siteText.sqlCard1Time}
@@ -237,8 +237,7 @@ const HomepageScreen = () => {
                                     <span className="plan-banner">
                                         {siteText.sqlCard1Price}
                                     </span>
-                                    <div className="start-here"
-                                        onClick={() => { setViewModal(true); setSelectedPlan(siteText.sqlCard1Title); setSelectedPrice(siteText.sqlCard1Price) }}>
+                                    <a href="bit.ly/gloed" className="start-here" >
                                         <div className="start-here-div">
                                             <div className="start-here-div-div1">
                                                 Start here
@@ -249,11 +248,11 @@ const HomepageScreen = () => {
                                                 </svg>
                                             </div>
                                         </div>
-                                    </div>
+                                    </a>
                                 </div>
                                 <div className="price-plan-2">
                                     <p className="plan-name">{siteText.sqlCard2Title}</p>
-                                    <h6 className="plan-price">₦{new Intl.NumberFormat("en-US").format(siteText.sqlCard2Price)}</h6>
+                                    <h6 className="plan-price"> Contact Us</h6>
                                     <p className="plan-description">
                                         {siteText.sqlCard2Description}
                                     </p>
@@ -261,13 +260,13 @@ const HomepageScreen = () => {
                                         {siteText.sqlCard2Time}
                                     </p>
                                     <span className="plan-banner">
-                                        ₦{new Intl.NumberFormat("en-US").format(siteText.sqlCard2Price)}
+                                        Contact Us
                                     </span>
                                     <div className="start-here"
-                                        onClick={() => { setViewModal(true); setSelectedPlan(siteText.sqlCard2Title); setSelectedPrice(siteText.sqlCard2Price) }}>
+                                        onClick={() => { setViewModal(true); setSelectedPlan(siteText.sqlCard1Title); setSelectedPrice(siteText.sqlCard1Price) }}>
                                         <div className="start-here-div">
                                             <div className="start-here-div-div1">
-                                                Start here
+                                                Contact Us
                                             </div>
                                             <div className="start-here-div-div2">
                                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -279,7 +278,7 @@ const HomepageScreen = () => {
                                 </div>
                                 <div className="price-plan-3">
                                     <p className="plan-name">{siteText.sqlCard3Title}</p>
-                                    <h6 className="plan-price">₦{new Intl.NumberFormat("en-US").format(siteText.sqlCard3Price)}</h6>
+                                    <h6 className="plan-price">Contact Us</h6>
                                     <p className="plan-description">
                                         {siteText.sqlCard3Description}
                                     </p>
@@ -287,13 +286,13 @@ const HomepageScreen = () => {
                                         {siteText.sqlCard3Time}
                                     </p>
                                     <span className="plan-banner">
-                                        ₦{new Intl.NumberFormat("en-US").format(siteText.sqlCard3Price)}
+                                        Contact Us
                                     </span>
                                     <div className="start-here"
-                                        onClick={() => { setViewModal(true); setSelectedPlan(siteText.sqlCard3Title); setSelectedPrice(siteText.sqlCard3Price) }}>
+                                        onClick={() => { setViewModal(true); setSelectedPlan(siteText.sqlCard1Title); setSelectedPrice(siteText.sqlCard1Price) }}>
                                         <div className="start-here-div">
                                             <div className="start-here-div-div1">
-                                                Start here
+                                                Contact Us
                                             </div>
                                             <div className="start-here-div-div2">
                                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -490,7 +489,7 @@ const HomepageScreen = () => {
                             <div className="socials">
                                 <a href="mailto: contact@gloed.co" className="">
                                     <div className=" email-icon">
-                                        <AtSign size={14} className="icon"/>
+                                        <AtSign size={14} className="icon" />
                                     </div>
                                 </a>
                                 <a target="_blank" rel="noreferrer" href="https://www.linkedin.com/company/gloed-co"><img src={SocialLinkedIn} alt="" className="" /></a>
@@ -499,7 +498,7 @@ const HomepageScreen = () => {
                             </div>
                         </div>
                         <div className="footer-menu">
-                            
+
                             <ul className="footer-menu2">
                                 <li className="">Courses</li>
                                 <li className=""><span onClick={() => { setSelectedCourse("sql"); gotoPricing() }} className="">SQL</span></li>
