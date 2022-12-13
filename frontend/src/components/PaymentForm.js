@@ -71,22 +71,22 @@ const PaymentForm = ({ setViewModal, siteText, selectedPlan, selectedPrice }) =>
         <div className="payment-form-background" onClick={CloseModal}>
             {/* <img style={{ cursor: "pointer" }} src={CloseIcon} alt="" className="close-icon"
                 onClick={() => { setViewModal(false) }} /> */}
-                {/* <XCircle className='close-icon' size={48} onClick={() => {setViewModal(false)}}/> */}
+            {/* <XCircle className='close-icon' size={48} onClick={() => {setViewModal(false)}}/> */}
             <div className="payment-form">
                 {registrationStatus ?
                     <div className='user-registered'>
                         <h2 className=""> Success. For more information, join our slack channel.</h2>
                         <p></p>
                         <button type='submit' className="close-button"
-                            onClick={() => { setViewModal(false) ; window.location.href = "https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ"}}>Continue to slack</button>
-                        <button type='button'className="close-button1"
-                                onClick={() => {setViewModal(false)}}>Close</button>
+                            onClick={() => { setViewModal(false); window.location.href = "https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" }}>Continue to slack</button>
+                        <button type='button' className="close-button1"
+                            onClick={() => { setViewModal(false) }}>Close</button>
                     </div>
                     : <div className="">
-                        <h2 className="title">Payment Form</h2>
+                        <h2 className="title">Contact Form</h2>
                         <div className="payment-desc-div">
-                            <p className="payment-plan">Plan: {selectedPlan}</p>
-                            <p className="payment-plan">Price: {selectedPrice}</p>
+                            <p className="payment-plan">Send us your details</p>
+                            <p className="payment-plan"></p>
                         </div>
 
                         <form action="" className="">
@@ -97,9 +97,9 @@ const PaymentForm = ({ setViewModal, siteText, selectedPlan, selectedPrice }) =>
                             <input type="text" name="phoneNum" placeholder='Number'
                                 onChange={(e) => { setPhoneNum(e.target.value) }} />
                             <button type='submit' id="registerButton" className="register-button"
-                                onClick={onClickProceed}>{selectedPrice === "Free"? "Continue" : "Continue to checkout" }</button>
-                            <button type='button'className="close-button1"
-                                onClick={() => {setViewModal(false)}}>Close</button>
+                                onClick={onClickProceed}>{selectedPrice === "Free" ? "Continue" : "Continue to checkout"}</button>
+                            <button type='button' className="close-button1"
+                                onClick={() => { setViewModal(false) }}>Close</button>
                         </form>
                     </div>
                 }
