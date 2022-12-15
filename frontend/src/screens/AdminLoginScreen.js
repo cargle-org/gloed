@@ -12,22 +12,22 @@ const AdminLoginScreen = () => {
 
     const onClickLogin = (e) => {
         e.preventDefault()
-        if(email === "") {
+        if (email === "") {
             setErrorMsg("Enter Username")
             return;
         }
-        if(password === "") {
+        if (password === "") {
             setErrorMsg("Enter Password")
             return;
         }
 
         const data = {
-            email : email ,
-            password : password
-        } 
-        
-        axios.post("https://gloed-server.herokuapp.com/api/login", data)
-            .then (response => {
+            email: email,
+            password: password
+        }
+
+        axios.post("https://gloed-previous.onrender.com/api/login", data)
+            .then(response => {
                 console.log(response.data)
                 localStorage.setItem("accessToken", response.data.token)
                 history.push("/admin")
@@ -43,7 +43,7 @@ const AdminLoginScreen = () => {
         <div className="body-div">
             <div className="form-div">
                 <form action="" className=""
-                onSubmit = {onClickLogin}>
+                    onSubmit={onClickLogin}>
                     <h2 className="form-text">Admin Login</h2>
                     {errorMsg ?
                         <div className="form-error">
@@ -58,7 +58,7 @@ const AdminLoginScreen = () => {
                         onChange={(e) => { setEmail(e.target.value) }} />
                     <input value={password} placeholder="Enter Password" type="password"
                         onChange={(e) => { setPassword(e.target.value) }} />
-                    <button type = "submit">Login</button>
+                    <button type="submit">Login</button>
                 </form>
             </div>
         </div>

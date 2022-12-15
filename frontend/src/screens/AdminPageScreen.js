@@ -1,7 +1,7 @@
 import React from 'react'
 import $ from 'jquery'
 import "../css/Admin.css"
-import { useHistory} from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import Logo from '../images/logo.svg'
 import JumbotronImage from '../images/jumbotron-img.svg'
@@ -27,22 +27,22 @@ const AdminPageScreen = () => {
     useEffect(() => {
         var token = localStorage.getItem("accessToken")
         console.log(token)
-        if(!token) {
+        if (!token) {
             history.push("/admin/login")
         }
 
         const headers = {
-            contentType : "application/json",
-            Authorization : "Bearer " + token
+            contentType: "application/json",
+            Authorization: "Bearer " + token
         }
-        
-        axios.get("https://gloed-server.herokuapp.com/api/site-text", {
-            headers : headers
+
+        axios.get("https://gloed-previous.onrender.com/api/site-text", {
+            headers: headers
         })
             .then(response => {
                 setSiteText(response.data.siteText.data)
-            }) 
-            .catch(err=> {
+            })
+            .catch(err => {
                 console.error(err)
             })
         // $("input[placeholder]").each(function () {
@@ -56,18 +56,18 @@ const AdminPageScreen = () => {
         const token = localStorage.getItem("accessToken")
         const data = siteText
         const headers = {
-            contentType : "application/json",
-            Authorization : "Bearer " + token
+            contentType: "application/json",
+            Authorization: "Bearer " + token
         }
-        
-        axios.post("https://gloed-server.herokuapp.com/api/site-text",data, {
-            headers : headers
+
+        axios.post("https://gloed-previous.onrender.com/api/site-text", data, {
+            headers: headers
         })
             .then(response => {
                 console.log(response)
                 setSiteText(response.data.siteText.data)
-            }) 
-            .catch(err=> {
+            })
+            .catch(err => {
                 console.error(err.response)
             })
     }
@@ -76,10 +76,10 @@ const AdminPageScreen = () => {
         <div>
             <div className="admin-page">
                 <h1 className="admin-page-header">Admin Page</h1>
-                <button className = "admin-page-button" 
-                 onClick = {onClickSubmit}>Submit</button>
+                <button className="admin-page-button"
+                    onClick={onClickSubmit}>Submit</button>
             </div>
-            
+
             <>
                 <header>
                     {/* Navbar */}
@@ -145,26 +145,26 @@ const AdminPageScreen = () => {
                                         </radialGradient>
                                     </defs>
                                 </svg>
-                                <span><input type="text" value={siteText.jumbotronText1} 
-                                    onChange = {(e) => {setSiteText({...siteText ,jumbotronText1 : e.target.value })}}/></span>
+                                <span><input type="text" value={siteText.jumbotronText1}
+                                    onChange={(e) => { setSiteText({ ...siteText, jumbotronText1: e.target.value }) }} /></span>
                             </h6>
                             <h4 className="text-2">
-                                <input type="text" value={siteText.jumbotronText2part1} 
-                                    onChange = {(e) => {setSiteText({...siteText, jumbotronText2part1 : e.target.value})}}/>
-                                     <span>
-                                         <input type="text" value={siteText.jumbotronText2part2} 
-                                         onChange = {(e) => {setSiteText({...siteText, jumbotronText2part2 : e.target.value})}}/>
-                                    </span> 
-                                <input type="text" value={siteText.jumbotronText2part3} 
-                                    onChange = {(e) => {setSiteText({...siteText, jumbotronText2part3 : e.target.value})}}/>
+                                <input type="text" value={siteText.jumbotronText2part1}
+                                    onChange={(e) => { setSiteText({ ...siteText, jumbotronText2part1: e.target.value }) }} />
+                                <span>
+                                    <input type="text" value={siteText.jumbotronText2part2}
+                                        onChange={(e) => { setSiteText({ ...siteText, jumbotronText2part2: e.target.value }) }} />
+                                </span>
+                                <input type="text" value={siteText.jumbotronText2part3}
+                                    onChange={(e) => { setSiteText({ ...siteText, jumbotronText2part3: e.target.value }) }} />
                             </h4>
                             <p className="text-3">
-                                <input type="text" value={siteText.jumbotronText3part1} 
-                                    onChange = {(e) => {setSiteText({...siteText, jumbotronText3part1 : e.target.value})}}/>
+                                <input type="text" value={siteText.jumbotronText3part1}
+                                    onChange={(e) => { setSiteText({ ...siteText, jumbotronText3part1: e.target.value }) }} />
                                 <br />
                                 <strong>
-                                    <input type="text" value={siteText.jumbotronText3part2} 
-                                        onChange = {(e) => {setSiteText({...siteText, jumbotronText3part2 : e.target.value})}}/>
+                                    <input type="text" value={siteText.jumbotronText3part2}
+                                        onChange={(e) => { setSiteText({ ...siteText, jumbotronText3part2: e.target.value }) }} />
                                 </strong>
                             </p>
                             <a href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="join-slack">
@@ -202,10 +202,10 @@ const AdminPageScreen = () => {
                 {/* available courses */}
                 <section id="available-courses" className="available-courses">
                     <div className="">
-                        <h2 className="pricing"><input type="text" value={siteText.pricingHeader} 
-                        onChange = {(e) => {setSiteText({...siteText, pricingHeader : e.target.value})}}/></h2>
-                        <h4 className="available-courses-text"><input type="text" value={siteText.pricingText1} 
-                            onChange = {(e) => {setSiteText({...siteText, pricingText1 : e.target.value})}}/></h4>
+                        <h2 className="pricing"><input type="text" value={siteText.pricingHeader}
+                            onChange={(e) => { setSiteText({ ...siteText, pricingHeader: e.target.value }) }} /></h2>
+                        <h4 className="available-courses-text"><input type="text" value={siteText.pricingText1}
+                            onChange={(e) => { setSiteText({ ...siteText, pricingText1: e.target.value }) }} /></h4>
                         <div className="pricing-div">
                             <div className="sql-or-excel">
                                 <div className={selectedCourse === "sql" ? "sql active" : "sql"}
@@ -257,17 +257,17 @@ const AdminPageScreen = () => {
                             {selectedCourse === "sql"
                                 ? <div className="prices">
                                     <div className="price-plan-1">
-                                        <p className="plan-name"><input type="text" value={siteText.sqlCard1Title} 
-                                            onChange = {(e) => {setSiteText({...siteText, sqlCard1Title : e.target.value})}}/></p>
-                                        <h6 className="plan-price"><input type="text" value={siteText.sqlCard1Price} 
-                                            onChange = {(e) => {setSiteText({...siteText, sqlCard1Price : e.target.value})}}/></h6>
+                                        <p className="plan-name"><input type="text" value={siteText.sqlCard1Title}
+                                            onChange={(e) => { setSiteText({ ...siteText, sqlCard1Title: e.target.value }) }} /></p>
+                                        <h6 className="plan-price"><input type="text" value={siteText.sqlCard1Price}
+                                            onChange={(e) => { setSiteText({ ...siteText, sqlCard1Price: e.target.value }) }} /></h6>
                                         <p className="plan-description">
-                                            <input type="text" value={siteText.sqlCard1Description} 
-                                                onChange = {(e) => {setSiteText({...siteText, sqlCard1Description : e.target.value})}}/>
+                                            <input type="text" value={siteText.sqlCard1Description}
+                                                onChange={(e) => { setSiteText({ ...siteText, sqlCard1Description: e.target.value }) }} />
                                         </p>
                                         <p className="plan-time">
-                                            <input type="text" value={siteText.sqlCard1Time} 
-                                                onChange = {(e) => {setSiteText({...siteText, sqlCard1Time : e.target.value})}}/>
+                                            <input type="text" value={siteText.sqlCard1Time}
+                                                onChange={(e) => { setSiteText({ ...siteText, sqlCard1Time: e.target.value }) }} />
                                         </p>
 
                                         <a href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="start-here">
@@ -284,17 +284,17 @@ const AdminPageScreen = () => {
                                         </a>
                                     </div>
                                     <div className="price-plan-2">
-                                        <p className="plan-name"><input type="text" value={siteText.sqlCard2Title} 
-                                            onChange = {(e) => {setSiteText({...siteText, sqlCard2Title : e.target.value})}}/></p>
-                                        <h6 className="plan-price"><input type="text" value={siteText.sqlCard2Price} 
-                                            onChange = {(e) => {setSiteText({...siteText, sqlCard2Price : e.target.value})}}/></h6>
+                                        <p className="plan-name"><input type="text" value={siteText.sqlCard2Title}
+                                            onChange={(e) => { setSiteText({ ...siteText, sqlCard2Title: e.target.value }) }} /></p>
+                                        <h6 className="plan-price"><input type="text" value={siteText.sqlCard2Price}
+                                            onChange={(e) => { setSiteText({ ...siteText, sqlCard2Price: e.target.value }) }} /></h6>
                                         <p className="plan-description">
-                                        <input type="text" value={siteText.sqlCard2Description} 
-                                            onChange = {(e) => {setSiteText({...siteText, sqlCard2Description : e.target.value})}}/>
+                                            <input type="text" value={siteText.sqlCard2Description}
+                                                onChange={(e) => { setSiteText({ ...siteText, sqlCard2Description: e.target.value }) }} />
                                         </p>
                                         <p className="plan-time">
-                                            <input type="text" value={siteText.sqlCard2Time} 
-                                                onChange = {(e) => {setSiteText({...siteText, sqlCard2Time : e.target.value})}}/>
+                                            <input type="text" value={siteText.sqlCard2Time}
+                                                onChange={(e) => { setSiteText({ ...siteText, sqlCard2Time: e.target.value }) }} />
                                         </p>
                                         <a href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="start-here">
                                             <div className="start-here-div">
@@ -310,17 +310,17 @@ const AdminPageScreen = () => {
                                         </a>
                                     </div>
                                     <div className="price-plan-3">
-                                        <p className="plan-name"><input type="text" value={siteText.sqlCard3Title} 
-                                            onChange = {(e) => {setSiteText({...siteText, sqlCard3Title : e.target.value})}}/></p>
-                                        <h6 className="plan-price"><input type="text" value={siteText.sqlCard3Price} 
-                                            onChange = {(e) => {setSiteText({...siteText, sqlCard3Price : e.target.value})}}/></h6>
+                                        <p className="plan-name"><input type="text" value={siteText.sqlCard3Title}
+                                            onChange={(e) => { setSiteText({ ...siteText, sqlCard3Title: e.target.value }) }} /></p>
+                                        <h6 className="plan-price"><input type="text" value={siteText.sqlCard3Price}
+                                            onChange={(e) => { setSiteText({ ...siteText, sqlCard3Price: e.target.value }) }} /></h6>
                                         <p className="plan-description">
-                                            <input type="text" value={siteText.sqlCard3Description} 
-                                                onChange = {(e) => {setSiteText({...siteText, sqlCard3Description : e.target.value})}}/>
+                                            <input type="text" value={siteText.sqlCard3Description}
+                                                onChange={(e) => { setSiteText({ ...siteText, sqlCard3Description: e.target.value }) }} />
                                         </p>
                                         <p className="plan-time">
-                                            <input type="text" value={siteText.sqlCard3Time} 
-                                                onChange = {(e) => {setSiteText({...siteText, sqlCard3Time: e.target.value})}}/>
+                                            <input type="text" value={siteText.sqlCard3Time}
+                                                onChange={(e) => { setSiteText({ ...siteText, sqlCard3Time: e.target.value }) }} />
                                         </p>
                                         <a href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="start-here">
                                             <div className="start-here-div">
@@ -354,10 +354,10 @@ const AdminPageScreen = () => {
                                             <path d="M20.5089 39.5229L23.9151 34.1488L20.7952 28.8046H23.3059L25.009 32.2202C25.1655 32.5444 25.2732 32.7862 25.332 32.9455H25.354C25.4664 32.6866 25.584 32.4348 25.7065 32.1905L27.5269 28.8046H29.8321L26.6313 34.1188L29.9128 39.5229H27.4608L25.4933 35.7708C25.4007 35.6113 25.3222 35.4435 25.2585 35.27H25.2292C25.1716 35.4401 25.0954 35.603 25.0015 35.7557L22.9754 39.5229H20.5089Z" fill="white" />
                                         </svg>
                                     </div>
-                                    <h4 className=""><input type="text" value={siteText.excelText1} 
-                                        onChange = {(e) => {setSiteText({...siteText, excelText1 : e.target.value})}}/></h4>
-                                    <p className=""><input type="text" value={siteText.excelText2} 
-                                        onChange = {(e) => {setSiteText({...siteText, excelText2: e.target.value})}}/></p>
+                                    <h4 className=""><input type="text" value={siteText.excelText1}
+                                        onChange={(e) => { setSiteText({ ...siteText, excelText1: e.target.value }) }} /></h4>
+                                    <p className=""><input type="text" value={siteText.excelText2}
+                                        onChange={(e) => { setSiteText({ ...siteText, excelText2: e.target.value }) }} /></p>
                                     <a href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="join-slack">
                                         <div className="join-slack-button">
                                             <div className="join-slack-button-div1">
@@ -388,16 +388,16 @@ const AdminPageScreen = () => {
                                 </svg>
                             </div>
                             <div className="join-our-slack-text">
-                                <span className=""><input type="text" value={siteText.joinOurCommunityText1} 
-                                    onChange = {(e) => {setSiteText({...siteText, joinOurCommunityText1 : e.target.value})}}/></span>
-                                <h4 className=""><input type="text" value={siteText.joinOurCommunityText2} 
-                                    onChange = {(e) => {setSiteText({...siteText, joinOurCommunityText2 : e.target.value})}}/></h4>
+                                <span className=""><input type="text" value={siteText.joinOurCommunityText1}
+                                    onChange={(e) => { setSiteText({ ...siteText, joinOurCommunityText1: e.target.value }) }} /></span>
+                                <h4 className=""><input type="text" value={siteText.joinOurCommunityText2}
+                                    onChange={(e) => { setSiteText({ ...siteText, joinOurCommunityText2: e.target.value }) }} /></h4>
                                 <p className="">
-                                    <input type="text" value={siteText.joinOurCommunityText3part1} 
-                                        onChange = {(e) => {setSiteText({...siteText, joinOurCommunityText3part1 : e.target.value})}}/>
+                                    <input type="text" value={siteText.joinOurCommunityText3part1}
+                                        onChange={(e) => { setSiteText({ ...siteText, joinOurCommunityText3part1: e.target.value }) }} />
                                     <br />
-                                    <strong><input type="text" value={siteText.joinOurCommunityText3part2} 
-                                        onChange = {(e) => {setSiteText({...siteText, joinOurCommunityText3part2 : e.target.value})}}/></strong>
+                                    <strong><input type="text" value={siteText.joinOurCommunityText3part2}
+                                        onChange={(e) => { setSiteText({ ...siteText, joinOurCommunityText3part2: e.target.value }) }} /></strong>
                                 </p>
                             </div>
                             <a href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="join-slack">
@@ -429,21 +429,21 @@ const AdminPageScreen = () => {
                             </div>
                             <div className="about-us-grid-div2">
                                 <div className="about-us-grid-text">
-                                    <span className=""><input type="text" value={siteText.aboutUsText1} 
-                                        onChange = {(e) => {setSiteText({...siteText, aboutUsText1 : e.target.value})}}/></span>
-                                    <h4 className=""><input type="text" value={siteText.aboutUsText2} 
-                                        onChange = {(e) =>{setSiteText({...siteText, aboutUsText2 : e.target.value})}}/></h4>
+                                    <span className=""><input type="text" value={siteText.aboutUsText1}
+                                        onChange={(e) => { setSiteText({ ...siteText, aboutUsText1: e.target.value }) }} /></span>
+                                    <h4 className=""><input type="text" value={siteText.aboutUsText2}
+                                        onChange={(e) => { setSiteText({ ...siteText, aboutUsText2: e.target.value }) }} /></h4>
                                     <p className="">
-                                        <input type="text" value={siteText.aboutUsText3} 
-                                            onChange = {(e) => {setSiteText({...siteText, aboutUsText3 : e.target.value})}}/>
+                                        <input type="text" value={siteText.aboutUsText3}
+                                            onChange={(e) => { setSiteText({ ...siteText, aboutUsText3: e.target.value }) }} />
                                     </p>
                                 </div>
                                 <div className="people-trained">
                                     <div className="">
                                         <span className="main-text"><input type="text" value={siteText.experienceText1}
-                                            onChange = {(e) => {setSiteText({...siteText, experienceText1 : e.target.value})}} /></span>
-                                        <span className="sub-text"><input type="text" value={siteText.experienceText2} 
-                                            onChange = {(e) => {setSiteText({...siteText, experienceText2 : e.target.value})}}/></span>
+                                            onChange={(e) => { setSiteText({ ...siteText, experienceText1: e.target.value }) }} /></span>
+                                        <span className="sub-text"><input type="text" value={siteText.experienceText2}
+                                            onChange={(e) => { setSiteText({ ...siteText, experienceText2: e.target.value }) }} /></span>
                                     </div>
                                 </div>
                                 <a href="https://join.slack.com/t/gloedworkspace/shared_invite/zt-yvcwllf9-7Hab2o2DCJl7jiifv78lvQ" className="join-slack">
@@ -464,12 +464,12 @@ const AdminPageScreen = () => {
                     {/* testimonials */}
                     <section id="testimonials" className="testimonials">
                         <h2 className="feedback ">
-                        <input type="text" value={siteText.testimonialText1} 
-                            onChange = {(e) => {setSiteText({...siteText, testimonialText1 : e.target.value})}}/>
+                            <input type="text" value={siteText.testimonialText1}
+                                onChange={(e) => { setSiteText({ ...siteText, testimonialText1: e.target.value }) }} />
                         </h2>
                         <h4 className="testimonials-text">
-                        <input type="text" value={siteText.testimonialText2} 
-                            onChange = {(e) => {setSiteText({...siteText, testimonialText2 : e.target.value})}}/>
+                            <input type="text" value={siteText.testimonialText2}
+                                onChange={(e) => { setSiteText({ ...siteText, testimonialText2: e.target.value }) }} />
                         </h4>
                         <div className="testimonials-carousel">
                             <div className="carousel-icon-left">
@@ -494,34 +494,34 @@ const AdminPageScreen = () => {
                             <ul id="responsive" className="testimonial-card-section">
                                 <li className="testimonial-card item-a">
                                     <p className="testimonial-card-text">
-                                        <input type="text" value={siteText.testimonialCard1Text} 
-                                            onChange = {(e) => {setSiteText({...siteText, testimonialCard1Text : e.target.value})}}/>
+                                        <input type="text" value={siteText.testimonialCard1Text}
+                                            onChange={(e) => { setSiteText({ ...siteText, testimonialCard1Text: e.target.value }) }} />
                                     </p>
                                     <div className="testimonail-persona">
                                         <img src={PersonaImg} alt="" className="" />
                                         <div className="testimonial-persona-text">
-                                            <h6 className="testimonial-persona-name"><input type="text" value={siteText.testimonialCard1Name} 
-                                            onChange = {(e) => {setSiteText({...siteText, testimonialCard1Name : e.target.value})}}/></h6>
+                                            <h6 className="testimonial-persona-name"><input type="text" value={siteText.testimonialCard1Name}
+                                                onChange={(e) => { setSiteText({ ...siteText, testimonialCard1Name: e.target.value }) }} /></h6>
                                             <span className="testimonial-persona-name-credentials">
-                                            <input type="text" value={siteText.testimonialCard1Position} 
-                                            onChange = {(e) => {setSiteText({...siteText, testimonialCard1Name: e.target.value})}}/>
+                                                <input type="text" value={siteText.testimonialCard1Position}
+                                                    onChange={(e) => { setSiteText({ ...siteText, testimonialCard1Name: e.target.value }) }} />
                                             </span>
                                         </div>
                                     </div>
                                 </li>
                                 <li className="testimonial-card item-b">
                                     <p className="testimonial-card-text">
-                                    <input type="text" value={siteText.testimonialCard2Text} 
-                                            onChange = {(e) => {setSiteText({...siteText, testimonialCard2Text : e.target.value})}}/>
+                                        <input type="text" value={siteText.testimonialCard2Text}
+                                            onChange={(e) => { setSiteText({ ...siteText, testimonialCard2Text: e.target.value }) }} />
                                     </p>
                                     <div className="testimonail-persona">
                                         <img src={PersonaImg} alt="" className="" />
                                         <div className="testimonial-persona-text">
-                                            <h6 className="testimonial-persona-name"><input type="text" value={siteText.testimonialCard2Name} 
-                                            onChange = {(e) => {setSiteText({...siteText, testimonialCard2Name : e.target.value})}}/></h6>
+                                            <h6 className="testimonial-persona-name"><input type="text" value={siteText.testimonialCard2Name}
+                                                onChange={(e) => { setSiteText({ ...siteText, testimonialCard2Name: e.target.value }) }} /></h6>
                                             <span className="testimonial-persona-name-credentials">
-                                            <input type="text" value={siteText.testimonialCard2Position} 
-                                            onChange = {(e) => {setSiteText({...siteText, testimonialCard2Position : e.target.value})}}/>
+                                                <input type="text" value={siteText.testimonialCard2Position}
+                                                    onChange={(e) => { setSiteText({ ...siteText, testimonialCard2Position: e.target.value }) }} />
                                             </span>
                                         </div>
                                     </div>

@@ -1,6 +1,6 @@
 import "../css/App.css"
 import { Link } from "react-router-dom"
-import { AtSign, Mail} from "react-feather"
+import { AtSign, Mail } from "react-feather"
 import { useEffect, useState } from 'react'
 import Logo from '../images/logo.svg'
 import JumbotronImage from '../images/jumbotron-img.svg'
@@ -26,7 +26,7 @@ const HomepageScreen = () => {
     const [selectedPrice, setSelectedPrice] = useState("")
 
     useEffect(() => {
-        axios.get("https://gloed-server.herokuapp.com/api/site-text")
+        axios.get("https://gloed-previous.onrender.com/api/site-text")
             .then(response => {
                 setSiteText(response.data.siteText.data)
                 console.log(response)
@@ -356,7 +356,7 @@ const HomepageScreen = () => {
                 </div>
             </section>
 
-          
+
 
             {/* join our slack */}
             <section className="join-our-slack">
@@ -406,16 +406,16 @@ const HomepageScreen = () => {
                     <div className="contact-us-buttons">
                         <a href='mailto:hi@gloed.co' className="contact-us-email">
                             <div className="contact-us-email-div1">EMAIL</div>
-                              <div class="contact-us-email-div2">
+                            <div class="contact-us-email-div2">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 16H2V2H9V0H2C0.89 0 0 0.9 0 2V16C0 17.1 0.89 18 2 18H16C17.1 18 18 17.1 18 16V9H16V16ZM11 0V2H14.59L4.76 11.83L6.17 13.24L16 3.41V7H18V0H11Z" fill="#FDD961"></path></svg>
-                              </div>
-                          </a>
+                            </div>
+                        </a>
                         <a href='tel:+2349066821545' className="contact-us-whatsapp">
                             <div className="contact-us-whatsapp-div1">WHATSAPP</div>
-                              <div class="contact-us-whatsapp-div2">
+                            <div class="contact-us-whatsapp-div2">
                                 <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 16H2V2H9V0H2C0.89 0 0 0.9 0 2V16C0 17.1 0.89 18 2 18H16C17.1 18 18 17.1 18 16V9H16V16ZM11 0V2H14.59L4.76 11.83L6.17 13.24L16 3.41V7H18V0H11Z" fill="#FDD961"></path></svg>
-                                </div>
-                         </a>
+                            </div>
+                        </a>
                     </div>
                 </div>
             </section>
@@ -538,7 +538,7 @@ const HomepageScreen = () => {
                             </div>
                         </div>
                         <div className="footer-menu">
-                            
+
                             <ul className="footer-menu2">
                                 <li className="">Courses</li>
                                 <li className=""><span onClick={() => { setSelectedCourse("sql"); gotoPricing() }} className="">SQL</span></li>
