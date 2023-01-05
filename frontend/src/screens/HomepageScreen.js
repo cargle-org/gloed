@@ -16,6 +16,62 @@ import SocialSlack from '../images/social/slack.svg'
 import axios from "axios"
 import PaymentForm from "../components/PaymentForm"
 
+const siteTextData = {
+    "siteText": {
+        "_id": "61c9d583f86a9659381694cd",
+        "site": "gloed.co",
+        "data": {
+            "headerMenu1": "ABOUT US",
+            "headerMenu2": "PRICING",
+            "headerMenu3": "TESTIMONIALS",
+            "jumbotronText1": "AFFORDABLE, INTERACTIVE & FRIENDLY",
+            "jumbotronText2part1": "Learn to use SQL for",
+            "jumbotronText2part2": "Business analysis & automation ",
+            "jumbotronText2part3": "",
+            "jumbotronText3part1": "Scale up your productivity by over 60% using SQL & Excel to analyze and automate business needs. ",
+            "jumbotronText3part2": "No prior SQL knowledge is required.",
+            "pricingHeader": "PRICING",
+            "pricingText1": "Available Courses",
+            "sqlCard1Title": "BASIC LEVEL",
+            "sqlCard1Price": "Free",
+            "sqlCard1Description": "Learn how to use SQL to query data stored in a database",
+            "sqlCard1Time": "in 45 minutes",
+            "sqlCard2Title": "INTERMEDIATE LEVEL",
+            "sqlCard2Price": "5000",
+            "sqlCard2Description": "Expand your SQL skills by manipulating databases with multiple related tables",
+            "sqlCard2Time": "in 1 hour",
+            "sqlCard3Title": "ADVANCED LEVEL",
+            "sqlCard3Price": "10000",
+            "sqlCard3Description": "Learn powerful functions for performing complex database operations",
+            "sqlCard3Time": "in 2 hours ",
+            "excelText1": "Coming Soon",
+            "excelText2": "Join our slack community to get up to date",
+            "joinOurCommunityText1": "JOIN US",
+            "joinOurCommunityText2": "Slack Community",
+            "joinOurCommunityText3part1": "Join our slack community to collaborate with other people",
+            "joinOurCommunityText3part2": "and get answers to your SQL & Excel related questions.",
+            "aboutUsText1": "WHO WE ARE",
+            "aboutUsText2": "About Us",
+            "aboutUsText3": "Our coaches have over 4 years of experience teaching SQL and have trained 200+ people from Basic to Advanced proficiency level. ",
+            "experienceText1": "",
+            "experienceText2": "",
+            "trainedText1": "200 +",
+            "trainedText2": "Number of people trained",
+            "testimonialText1": "FEEDBACK",
+            "testimonialText2": "Testimonials",
+            "testimonialCard1Text": "“It was convenient - the communication and teaching style is commendable.”",
+            "testimonialCard1Name": "aFounder at Bangs INC",
+            "testimonialCard1Position": "Founder at Bangs INC",
+            "testimonialCard2Text": "“The platform has a slick experience, that was so easy to use. I feel so less stressed as i know we are doing everything by the book.”",
+            "testimonialCard2Name": "Wale Fasakin",
+            "testimonialCard2Position": "Student, U.I",
+            "testimonialCard3Text": "“The platform has a slick experience, that was so easy to use. I feel so less stressed as i know we are doing everything by the book.”",
+            "testimonialCard3Name": "Kirko Bangs",
+            "testimonialCard3Position": "Founder at Bangs INC"
+        },
+        "__v": 0
+    }
+}
 
 const HomepageScreen = () => {
     const [siteText, setSiteText] = useState({})
@@ -31,6 +87,7 @@ const HomepageScreen = () => {
                 setSiteText(response.data.siteText.data)
                 console.log(response)
             })
+        // setSiteText(siteTextData.siteText.data)
     }, [])
 
     const gotoAbout = () => {
