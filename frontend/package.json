@@ -10,12 +10,14 @@
     "express": "^4.17.2",
     "jquery": "^3.6.0",
     "lightslider": "^1.1.6",
+    "moment": "^2.29.4",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-feather": "^2.0.9",
     "react-owl-carousel": "^2.3.3",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^5.3.4",
     "react-scripts": "4.0.3",
+    "swiper": "^8.4.5",
     "web-vitals": "^1.1.2"
   },
   "scripts": {
@@ -41,5 +43,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@iconify/react": "^4.0.1"
   }
 }

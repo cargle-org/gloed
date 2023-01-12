@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,400;1,500;1,600;1,800;1,900&display=swap');
+
+
 .payment-form-background {
     position: fixed;
     left: 0;
@@ -10,6 +13,7 @@
     justify-content: center;
     align-items: center;
     padding: 16px;
+    z-index: 1000;
 }
 
 .payment-form-background  .close-icon{
@@ -26,43 +30,135 @@
 }
 
 .payment-form .payment-plan {
-    font-family: 'Gilroy', sans-serif;
-    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
     margin-top: 8px;
+    text-transform: uppercase;
+}
+.form-wrapper{
+    max-height: 50vh;
+    overflow-y: scroll;
 }
 
 .payment-form  h2 {
     text-align: center;
-    font-family: 'Gilroy', sans-serif;
+    font-family: 'Poppins', sans-serif;
 	font-style: normal;
 	font-weight: 500;
-	font-size: 36px;
+	font-size: 25px;
 	line-height: 101.1%;
 	text-align: center;
 	letter-spacing: -0.02em;
 	color: #4588EC;
-    margin-bottom: 36px;
+    margin-bottom: 20px;
 }
 
 .payment-form .payment-desc-div {
     margin-bottom: 24px;
 }
 
-.payment-form  input  {
-    margin-bottom: 32px;
-    font-family: 'Gilroy', sans-serif;
-    height: 24px;
+.payment-form .input-group{
+    font-family: 'Poppins';
+}
+.payment-form label{
+    font-family: 'Poppins';
+    font-size: 14px;
+}
+
+.payment-form .input-group > input  {
+    margin-bottom: 16px;
+    font-family: 'Poppins', sans-serif;
     outline: none;
     display: block;
     width: 100%;
-    border: none;
-    border-bottom: 2px solid  #4588EC; 
-    font-size: 18px;
+    border: none; 
+    color: #838383;
+    font-size:14px;
+    background: #F7F7F7;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+.payment-form .input-group > textarea  {
+    margin-bottom: 16px;
+    font-family: 'Poppins', sans-serif;
+    outline: none;
+    display: block;
+    width: 100%;
+    border: none; 
+    color: #838383;
+    font-size:14px;
+    background: #F7F7F7;
+    border-radius: 5px;
+    padding: 0.5rem 1rem;
+}
+
+.payment-form  input::placeholder{
+    color: #838383;
+    font-size:14px;
+}
+
+.payment-form .schedule-label{
+    display:block;
+    margin-bottom: 1rem;
+}
+
+.payment-form .radio-group{
+    margin-bottom: 1.5rem;
+}
+
+.payment-form .radio-group .scheduled{
+    margin-right: 28px;
+}
+
+.payment-form .radio-label{
+    background: #F7F7F7;
+    border: 0.1px solid #999999;
+    border-radius: 5px;
+    padding:0.3rem 0.5rem;
+    color: #555555;
+}
+
+.payment-form .scheduled-times {
+    display:grid;
+    justify-content: start;
+    width:100%;
+    grid-template-columns: auto auto;
+    grid-gap: 15px 40px;
+    margin:1rem 0;
+}
+
+.payment-form .scheduled-time-card{
+    background: #FFFFFF;
+    border: 0.479452px solid #EFEFEF;
+    box-shadow: 0px 1.91781px 7.19178px 2.87671px rgba(0, 0, 0, 0.05);
+    border-radius: 4.5px;
+    padding: 0.3rem;
+    display: flex;
+    min-width: 120px;
+    gap: 8px;
+    align-items:center;
+    cursor: pointer;
+}
+
+.payment-form .scheduled-time-card .date-time h5{
+    color: #606060;
+    font-weight: 700;
+    font-size: 13px;
+    margin-bottom: -9px;
+}
+
+.payment-form .scheduled-time-card .date-time small{
+   color: #88879C;
+    font-weight: 400;
+    font-size: 10px;
+
 }
 
 .payment-form .payment-dropdown {
     box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.15);
 }
+
 .payment-form .payment-dropdown .selected-text{
     background: white;
     display: flex;
@@ -74,7 +170,7 @@
 
 .payment-form .payment-dropdown .selected-text span {
     padding: 8px 16px;
-    font-family: 'Gilroy', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-size: 18px;
     color: #4588EC;
 }
@@ -96,7 +192,7 @@
 .payment-form .payment-dropdown .dropdown-list  span {
     padding: 4px 16px;
     font-size: 16px;
-    font-family: 'Gilroy', sans-serif;
+    font-family: 'Poppins', sans-serif;
     display: block;
     color: #4588EC;
 }
@@ -108,17 +204,21 @@
 
 
 .payment-form .register-button {
-    margin-top: 48px;
-    font-family: 'Gilroy', sans-serif;
+    margin-top: 24px;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    height: 40px;
     background: #4588EC;
-    border-radius: 2px;
     color: white;
     font-size: 18px;
-    width: 100%;
+    padding: 0.7rem 1rem;
     border: none;
     cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
+}
+
+.payment-form .register-button.loading-button {
+    padding:0 1rem;
 }
 
 .payment-form .register-button:disabled {
@@ -127,29 +227,29 @@
 }
 
 .payment-form .close-button {
-    margin-top: 48px;
-    font-family: 'Gilroy', sans-serif;
+    margin-top: 24px;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    height: 40px;
     background: #4588EC;
-    border-radius: 2px;
     color: white;
     font-size: 18px;
-    width: 100%;
+    padding: 0.7rem 1rem;
     border: none;
     cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
 }
 
 .payment-form .close-button1 {
     margin-top: 16px;
-    font-family: 'Gilroy', sans-serif;
+    font-family: 'Poppins', sans-serif;
     font-weight: 500;
-    height: 40px;
     background: #e65a5a ;
-    border-radius: 2px;
     color: white;
     font-size: 18px;
-    width: 100%;
+    padding: 0.7rem 1rem;
     border: none;
     cursor: pointer;
+    border-radius: 8px;
+    width: 100%;
 }

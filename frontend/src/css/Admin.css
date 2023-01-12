@@ -420,7 +420,7 @@ a.join-slack {
 	color: #646464;
 }
 
-.available-courses .pricing-div .prices .plan-time {
+.available-courses .pricing-div .prices .plan-time , .available-courses .pricing-div .excel-prices .plan-time{
 	margin-top: 8px;
 	font-family: 'Gilroy', sans-serif;
 	font-weight: bold;
@@ -550,22 +550,22 @@ a.join-slack {
 	padding-top: 352px;
 }
 
-.join-our-slack .join-our-slack-grid {
+ .join-our-slack-grid {
 	max-width: 1200px;
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
 
-.join-our-slack .join-our-slack-grid .join-our-slack-grid-div1 {
+.join-our-slack-grid .join-our-slack-grid-div1 {
 	padding-right: 108px;
 }
 
-.join-our-slack .join-our-slack-grid .join-our-slack-text {
+.join-our-slack-grid .join-our-slack-text {
 	margin-top: 48px;
 }
 
-.join-our-slack .join-our-slack-grid .join-our-slack-text span {
+.join-our-slack-grid .join-our-slack-text span {
 	text-transform: uppercase;
 	display: block;
 	text-align: right;
@@ -578,7 +578,7 @@ a.join-slack {
 	color: #363636;
 }
 
-.join-our-slack .join-our-slack-grid .join-our-slack-text span::before {
+.join-our-slack-grid .join-our-slack-text span::before {
 	content: "";
 	height: 2px;
 	width: 80%;
@@ -589,7 +589,7 @@ a.join-slack {
 	transform: translateY(-50%);
 }
 
-.join-our-slack .join-our-slack-grid .join-our-slack-text h4 {
+.join-our-slack-grid .join-our-slack-text h4 {
 	margin-top: 4px;
 	font-family: 'Monument Extended', sans-serif;
 	text-transform: capitalize;

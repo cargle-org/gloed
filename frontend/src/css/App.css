@@ -105,6 +105,30 @@ header .header-div .header-menu ul li span {
 	cursor: pointer;
 }
 
+/* Info Section */
+.info-section {
+	position:fixed;
+	top: 110px;
+	right: 0;
+	z-index: 50;
+}
+
+.info-section .info-card {
+	display: flex;
+	gap: 30px;
+	align-items: center;
+	background-color: #458bec;
+	color: white;
+	padding: 1rem;
+    font-family: 'Poppins', sans-serif;
+	font-weight: 600;
+	opacity: 0.9;
+}
+
+.info-section .info-card svg, .info-section .info-card div{
+	cursor: pointer;
+}
+
 .mobile-menu {
 	display: none;
 }
@@ -160,15 +184,12 @@ header .header-div .header-menu ul li span {
 	margin-bottom: 60px;
 }
 
-a.join-slack {
-	text-decoration: none;
-}
-
 .join-slack-button {
 	display: inline-flex;
 	width: 320px;
 	height: 60px;
 	box-shadow: 0px 4px 20px 10px rgba(0, 0, 0, 0.05);
+	cursor: pointer;
 }
 
 .join-slack-button .join-slack-button-div1 {
@@ -347,7 +368,16 @@ a.join-slack {
 	gap: 28px;
 }
 
-.available-courses .pricing-div .prices>div {
+.available-courses .pricing-div .excel-prices {
+	align-items: start;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 28px;
+	width:90%;
+	margin: 0 auto;
+}
+
+.available-courses .pricing-div .prices > div, .available-courses .pricing-div .excel-prices > div {
 	padding: 48px 36px;
 	background: #FFFFFF;
 	border: 1px solid #E2E2E2;
@@ -355,7 +385,7 @@ a.join-slack {
 	position: relative;
 }
 
-.available-courses .pricing-div .prices .plan-name {
+.available-courses .pricing-div .prices .plan-name  , .available-courses .pricing-div .excel-prices .plan-name {
 	font-family: 'Gilroy', sans-serif;
 	font-weight: bold;
 	text-transform: uppercase;
@@ -365,7 +395,7 @@ a.join-slack {
 	color: #AEAEAE;
 }
 
-.available-courses .pricing-div .prices .plan-price {
+.available-courses .pricing-div .prices .plan-price, .available-courses .pricing-div .excel-prices .plan-price {
 	font-family: 'Monument Extended', sans-serif;
 	font-style: normal;
 	font-weight: normal;
@@ -375,7 +405,7 @@ a.join-slack {
 	color: #4588EC;
 }
 
-.available-courses .pricing-div .prices .plan-description {
+.available-courses .pricing-div .prices .plan-description, .available-courses .pricing-div .excel-prices .plan-description {
 	margin-top: 18px;
 	/* font-family: 'Gilroy-Regular', sans-serif; */
 	font-family: 'Gilroy', sans-serif;
@@ -385,31 +415,25 @@ a.join-slack {
 	color: #646464;
 }
 
-.available-courses .pricing-div .prices .plan-time {
-	margin-top: 8px;
-	font-family: 'Gilroy', sans-serif;
-	font-weight: bold;
-	font-size: 16px;
-	line-height: 151.7%;
-	letter-spacing: -0.02em;
-	color: #646464;
+.available-courses .pricing-div .excel-prices .price-plan-2 .plan-description{
+	width:60%;
 }
 
-.available-courses .pricing-div .prices .plan-banner {
+.available-courses .pricing-div .prices .plan-banner, .available-courses .pricing-div .excel-prices .plan-banner {
 	font-family: 'Monument Extended', sans-serif;
 	font-size: 48px;
 	position: absolute;
 	bottom: 36px;
 	color: rgba(69, 136, 236, 0.1);
 }
-.available-courses .pricing-div .prices .start-here {
+.available-courses .pricing-div .prices .start-here, .available-courses .pricing-div .excel-prices .start-here {
 	display: none;
 	opacity: 0;
 	text-decoration: none;
 	cursor: pointer;
 }
 
-.available-courses .pricing-div .prices .start-here-div {
+.available-courses .pricing-div .prices .start-here-div , .available-courses .pricing-div .excel-prices .start-here-div{
 	display: inline-flex;
 	height: 50px;
 	width: 200px;
@@ -417,7 +441,7 @@ a.join-slack {
 	margin-top: 16px;
 }
 
-.available-courses .pricing-div .prices .start-here-div-div1 {
+.available-courses .pricing-div .prices .start-here-div-div1,  .available-courses .pricing-div .excel-prices .start-here-div-div1{
 	text-transform: uppercase;
 	background: #FDD961;
 	display: flex;
@@ -433,7 +457,7 @@ a.join-slack {
 	flex-grow: 1;
 }
 
-.available-courses .pricing-div .prices .start-here-div-div2 {
+.available-courses .pricing-div .prices .start-here-div-div2, .available-courses .pricing-div .excel-prices .start-here-div-div2 {
 	flex-basis: 50px;
 	background: #ECBA13;
 	display: flex;
@@ -441,37 +465,37 @@ a.join-slack {
 	align-items: center;
 }
 
-.available-courses .pricing-div .prices>div:hover {
+.available-courses .pricing-div .prices>div:hover,  .available-courses .pricing-div .excel-prices>div:hover {
 	background: #4588EC;
 	transition: all 1s ease;
 }
 
-.available-courses .pricing-div .prices>div:hover .plan-name {
+.available-courses .pricing-div .prices>div:hover .plan-name , .available-courses .pricing-div .excel-prices>div:hover .plan-name{
 	color: #BDD8FF;
 	transition: all 1s ease;
 }
 
-.available-courses .pricing-div .prices>div:hover .plan-price {
+.available-courses .pricing-div .prices>div:hover .plan-price, .available-courses .pricing-div .excel-prices>div:hover .plan-price {
 	color: #FFFFFF;
 	transition: all 1s ease;
 }
 
-.available-courses .pricing-div .prices>div:hover .plan-description {
+.available-courses .pricing-div .prices>div:hover .plan-description, .available-courses .pricing-div .excel-prices>div:hover .plan-description {
 	color: #FFFFFF;
 	transition: all 1s ease;
 }
 
-.available-courses .pricing-div .prices>div:hover .plan-time {
+.available-courses .pricing-div .prices>div:hover .plan-time , .available-courses .pricing-div .excel-prices>div:hover .plan-time{
 	color: #FFFFFF;
 	transition: all 1s ease;
 }
 
-.available-courses .pricing-div .prices>div:hover .plan-banner {
+.available-courses .pricing-div .prices>div:hover .plan-banner, .available-courses .pricing-div .excel-prices>div:hover .plan-banner {
 	color: rgba(255, 255, 255, 0.1);
 	bottom: calc(50px + 16px + 36px);
 }
 
-.available-courses .pricing-div .prices>div:hover  .start-here {
+.available-courses .pricing-div .prices>div:hover  .start-here, .available-courses .pricing-div .excel-prices>div:hover  .start-here{
 	display: inline;
 	opacity: 1;
 	transition: opacity 1s ease;
@@ -509,29 +533,30 @@ a.join-slack {
 	color: #AFAFAF;
 }
 
-/* join our slack */
-.join-our-slack {
+/* join our slack and fireside-chat */
+.join-our-slack, .fireside-chat {
 	padding-bottom: 120px;
 	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 100%), rgba(235, 243, 255, 0.5);
 	padding-top: 352px;
 }
 
-.join-our-slack .join-our-slack-grid {
+
+ .join-our-slack-grid {
 	max-width: 1200px;
 	margin: 0 auto;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 }
 
-.join-our-slack .join-our-slack-grid .join-our-slack-grid-div1 {
+.join-our-slack-grid-div1 {
 	padding-right: 108px;
 }
 
-.join-our-slack .join-our-slack-grid .join-our-slack-text {
+ .join-our-slack-text {
 	margin-top: 48px;
 }
 
-.join-our-slack .join-our-slack-grid .join-our-slack-text span {
+ .join-our-slack-grid .join-our-slack-text span {
 	text-transform: uppercase;
 	display: block;
 	text-align: right;
@@ -544,7 +569,7 @@ a.join-slack {
 	color: #363636;
 }
 
-.join-our-slack .join-our-slack-grid .join-our-slack-text span::before {
+.join-our-slack-grid .join-our-slack-text span::before {
 	content: "";
 	height: 2px;
 	width: 80%;
@@ -555,7 +580,7 @@ a.join-slack {
 	transform: translateY(-50%);
 }
 
-.join-our-slack .join-our-slack-grid .join-our-slack-text h4 {
+.join-our-slack-grid .join-our-slack-text h4 {
 	margin-top: 4px;
 	font-family: 'Monument Extended', sans-serif;
 	text-transform: capitalize;
@@ -567,7 +592,7 @@ a.join-slack {
 	color: #4588EC;
 }
 
-.join-our-slack .join-our-slack-grid .join-our-slack-text p {
+.join-our-slack-grid .join-our-slack-text p {
 	margin-top: 28px;
 	margin-bottom: 32px;
 	font-family: 'Gilroy', sans-serif;
@@ -821,17 +846,79 @@ a.join-slack {
 	list-style: none;
 }
 
-.testimonials .testimonial-card-section>li {
-	margin-left: 30px;
-	margin-right: 30px;
+.testimonials .swiper {
+	padding: 2rem;
 }
 
+.testimonials .swiper-pagination {
+	bottom: 5px !important;
+}
+
+.testimonials .swiper-button-prev, .testimonials .swiper-button-next {
+	background: rgba(251, 252, 236, 0.44);
+	border: 1px solid #BCBCBC;
+	color: #BCBCBC;
+	padding: 1.5rem;
+	border-radius:50%;
+} 
+
+.testimonials .swiper-button-prev::after, .testimonials .swiper-button-next::after {
+	font-size: 20px!important;
+}
+
+  .swiper-wrapper {
+    margin-bottom: 2rem;
+	width: 360px;
+  }
+
+  @media (min-width: 860px) {
+	.testimonials .swiper {
+	padding: 2rem 5rem;
+}
+	.swiper-wrapper {
+	width: 650px;
+  }
+  }
+
+  @media (min-width: 650px) {
+	.testimonials .swiper {
+	padding: 2rem 5rem;
+}
+	.swiper-wrapper {
+	width: 650px;
+  }
+  }
+
+  .swiper-pagination-bullet {
+    background-color: black;
+    width: 4.75px;
+    height: 4.75px;
+    border-radius: 7.33561px;
+  }
+
+ .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    width: 38px!important;
+	background-color: black !important;
+	border-radius: 25px;
+  }
+
+  .swiper-pagination > span {
+    color: black !important;
+    opacity: 1;
+  }
+
+/* .testimonials .testimonial-card-section>li {
+	margin-left: 30px;
+	margin-right: 30px;
+} */
+
 .testimonials .testimonial-card {
+	background: #FFFFFF;
 	border: 1px solid #E2E2E2;
 	border-radius: 16px;
 	padding: 64px 52px;
 	min-height: 280px;
-	max-width: 512px;
+	width: 100%;
 }
 
 .testimonials .testimonial-card .testimonial-card-text {
@@ -1026,6 +1113,8 @@ footer .footer-div .footer-section2 .company-name {
 	letter-spacing: -0.02em;
 	color: #FFFFFF;
 }
+
+
 /* Privacy Policy*/
 .privacy-policy-screen{
 	background: linear-gradient(180deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%), #EBF3FF;
@@ -1093,6 +1182,30 @@ footer .footer-div .footer-section2 .company-name {
 }
 
 
+.payment-status-container{
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	font-family: 'Gilroy', sans-serif;
+}
+
+.payment-status-container h3{
+	font-size: 2rem;
+	color: #4588EC;
+	margin-top: 1rem;
+	font-family: 'Gilroy', sans-serif;
+}
+.payment-status-container small span{
+	font-weight: 500;
+	color: #4588EC;
+}
+.payment-status-container img{
+	width: 120px;
+}
+
 @media (max-width : 1024px) {
 	header .header-div {
 		padding-left: 32px;
@@ -1140,24 +1253,39 @@ footer .footer-div .footer-section2 .company-name {
 		grid-row: 1;
 	}
 
-	.available-courses .pricing-div .prices {
+	.available-courses .pricing-div .prices, .available-courses .pricing-div .excel-prices {
 		grid-template-columns: 1fr;
 	}
 
-	.join-our-slack {
-		padding-top: 800px;
+	 .fireside-chat {
+		margin-top: 1000px;
+		padding-top: 0;
 	}
 
-	.join-our-slack .join-our-slack-grid {
+	 .join-our-slack-grid {
 		grid-template-columns: 1fr;
 	}
 
-	.join-our-slack .join-our-slack-grid .join-our-slack-grid-div1 {
+	 .join-our-slack-grid .join-our-slack-grid-div1 {
 		padding-right: 0;
 	}
 
-	.join-our-slack-grid-div2 {
+	 .fireside-chat .join-our-slack-grid .join-our-slack-grid-div1 {
+		display: none;
+	}
+
+	.join-our-slack .join-our-slack-grid-div2 {
 		grid-row: 1;
+	}
+
+	.fireside-chat .join-our-slack-grid-div2 {
+		grid-row: 1;
+		padding:0 2rem;
+	}
+
+	.fireside-chat .join-our-slack-grid .join-our-slack-text p{
+		width: 80%;
+		text-align: left;
 	}
 
 	.about-us-grid .about-us-grid-div1 {
@@ -1179,12 +1307,12 @@ footer .footer-div .footer-section2 .company-name {
 		display: none;
 	}
 
-	.available-courses .pricing-div .prices>div .plan-banner {
+	.available-courses .pricing-div .prices>div .plan-banner , .available-courses .pricing-div .excel-prices>div .plan-banner{
 		color: rgba(255, 255, 255, 0.1);
 		bottom: calc(50px + 16px + 36px);
 	}
 
-	.available-courses .pricing-div .prices>div .start-here {
+	.available-courses .pricing-div .prices>div .start-here , .available-courses .pricing-div .excel-prices>div .start-here{
 		display: inline;
 		opacity: 1;
 		transition: opacity 1s ease;
@@ -1199,6 +1327,10 @@ footer .footer-div .footer-section2 .company-name {
 	.contact-us .contact-us-grid .contact-us-buttons{
 		flex-direction: column;
 	}
+
+	.available-courses .pricing-div .excel-prices .price-plan-2 .plan-description{
+	width:100%;
+	}
 }
 
 @media (max-width : 498px) {
@@ -1210,6 +1342,7 @@ footer .footer-div .footer-section2 .company-name {
 	.mobile-menu {
 		display: block;
 		position: relative;
+		z-index:100;
 	}
 
 	.mobile-menu .burger-menu>div {
@@ -1236,6 +1369,7 @@ footer .footer-div .footer-section2 .company-name {
 		height: 100vh;
 		width: 50vw;
 		text-align: center;
+		z-index: 500;
 	}
 
 	header .header-div .mobile-menu ul li {
@@ -1253,6 +1387,10 @@ footer .footer-div .footer-section2 .company-name {
 		cursor: pointer;
 	}
 
+	.info-section {
+		z-index: 1;
+	}
+
 	.available-courses .pricing-div .sql-or-excel {
 		grid-template-columns: 1fr;
 		row-gap: 8px;
@@ -1263,8 +1401,21 @@ footer .footer-div .footer-section2 .company-name {
 		padding: 120px 16px 100px 16px;
 	}
 
+	.fireside-chat {
+		margin-top: 1100px;
+		padding-top: 0;
+	}
+
+	.fireside-chat .join-our-slack-grid .join-our-slack-text span::before {
+		width: 70%;
+	}
+
+	.fireside-chat .join-our-slack-grid .join-our-slack-text p {
+		width: 100%;
+	}
+
 	.join-our-slack {
-		padding-top: 1024px;
+		padding-top: 100px;
 	}
 
 	.about-us-grid .people-trained {
