@@ -111,15 +111,15 @@ const siteTextData =
                          firesideText2:
                               "Fireside Chat",
                          firesideText3part1:
-                              "Once every month, we will discuss the importance of SQL, walk you through its application to your daily use-cases and also answer any questions you might have.",
+                              "Once every month, we will discuss the importance of SQL and Excel, walk you through its application to your daily use-cases and also answer any questions you might have.",
                          firesideText3part2:
-                              "This session is aimed at getting you started with data analysis and proactivity improvements.",
+                              "This session is aimed at getting you started with data analysis and improving your productivity.",
                          aboutUsText1:
                               "WHO WE ARE",
                          aboutUsText2:
                               "About Us",
                          aboutUsText3:
-                              "Our coaches have over 4 years of experience teaching SQL and have trained 200+ people from Basic to Advanced proficiency level. ",
+                              "Our coaches have over 5 years of experience teaching SQL and Excel and have trained 600+ people from Basic to Advanced proficiency level. ",
                          experienceText1:
                               "",
                          experienceText2:
@@ -600,11 +600,8 @@ const HomepageScreen =
                                              {" "}
                                              Next
                                              Fireside
-                                             Chat
-                                             starts{" "}
-                                             {
-                                                  FiresideClass
-                                             }
+                                             Chat : Jan. 28
+                                        
                                         </div>
                                    )}
                               </div>
