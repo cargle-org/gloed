@@ -42,7 +42,7 @@ const [
                           };
                           setTimeout(() => {
                             window.location.href =
-                                 "http://localhost:3000/";
+                                 "https://gloed.co/";
                           }, 5000)
                      }
                 )
