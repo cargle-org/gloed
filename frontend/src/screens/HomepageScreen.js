@@ -73,7 +73,7 @@ const siteTextData =
                          sqlCard3Title:
                               "ADVANCED LEVEL",
                          sqlCard3Price:
-                              "15000",
+                              "30000",
                          sqlCard3Description:
                               "Learn powerful functions for performing complex database operations",
                          sqlCard3Time:
@@ -229,9 +229,7 @@ const HomepageScreen =
                          document.getElementById(
                               "about-us"
                          ).offsetTop;
-                    console.log(
-                         aboutTop
-                    );
+                   
                     window.scrollTo(
                          {
                               top: aboutTop,
@@ -251,9 +249,7 @@ const HomepageScreen =
                          document.getElementById(
                               "available-courses"
                          ).offsetTop;
-                    console.log(
-                         pricingTop
-                    );
+                   
                     window.scrollTo(
                          {
                               top: pricingTop,
@@ -273,9 +269,7 @@ const HomepageScreen =
                          document.getElementById(
                               "contact-us"
                          ).offsetTop;
-                    console.log(
-                         contactTop
-                    );
+                   
                     window.scrollTo(
                          {
                               top: contactTop,
@@ -301,7 +295,7 @@ const HomepageScreen =
 
           const gotoTestimonials = () => {
               const testimonialTop = document.getElementById("testimonials").offsetTop
-              console.log(testimonialTop)
+         
               window.scrollTo({
                   top: testimonialTop,
                   left: 0,
@@ -1033,7 +1027,7 @@ const HomepageScreen =
                                                                  siteText.sqlCard3Title
                                                             );
                                                             setSelectedPrice(
-                                                                 siteText.sqlCard3Price
+                                                                 siteText.sqlCard2Price
                                                             );
                                                        }}
                                                   >
@@ -1742,6 +1736,7 @@ const HomepageScreen =
                               selectedCourse={
                                    selectedCourse
                               }
+                              setSelectedPrice={setSelectedPrice}
                          />
                     ) : null}
                </>

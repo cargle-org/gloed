@@ -32,9 +32,6 @@ const [
                      (
                           response
                      ) => {
-                          console.log(
-                               response
-                          );
                           if(response.data.success === true){
                             setPaymentStatus(true)
                           } else{

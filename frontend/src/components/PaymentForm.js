@@ -18,6 +18,7 @@ const PaymentForm =
           siteText,
           selectedPlan,
           selectedPrice,
+          setSelectedPrice,
           selectedCourse,
      }) => {
           const history =
@@ -120,6 +121,7 @@ const PaymentForm =
                useState(
                     false
                );
+               const [classPrice, setClassPrice]= useState(selectedPrice);
 
           const CloseModal =
                (
@@ -159,7 +161,7 @@ const PaymentForm =
                                    scheduleType,
                               dateTime:
                                    meetingTime,
-                              amount: selectedPrice,
+                              amount: classPrice,
                               phone: phone,
                               type: selectedPlan,
                               course: preferredclass,
@@ -170,7 +172,6 @@ const PaymentForm =
                     if (selectedPrice === "Free") {
                         axios.post("https://gloed-api.onrender.com/api/utils/session/book-free-unauth", data)
                             .then(response => {
-                                console.log(response.data);
                                 setIsLoading(false);
                                 setRegistrationStatus("success")
                             })
@@ -188,9 +189,6 @@ const PaymentForm =
                                (
                                     response
                                ) => {
-                                    console.log(
-                                         response
-                                    );
                                     setIsLoading(false);
                                     window.open(
                                          response.data.data.url
@@ -201,9 +199,6 @@ const PaymentForm =
                                (
                                     err
                                ) => {
-                                    console.log(
-                                         err.response
-                                    );
                                   if (err.response.data.data.success === false){
                                       setIsLoading(
                                            false
@@ -306,6 +301,9 @@ const PaymentForm =
                preferredclass,
           ]);
 
+
+          const OneOnOnePrice = selectedPrice * 3;
+
           return (
                <div
                     className="payment-form-background"
@@ -336,7 +334,9 @@ const PaymentForm =
                                    ) : (
                                         <h2 className="">
                                              {" "}
-                                             Failed, Try Again.
+                                             Failed,
+                                             Try
+                                             Again.
                                              For
                                              more
                                              information,
@@ -389,16 +389,28 @@ const PaymentForm =
                                              }
                                         </p>
                                         <p className="payment-plan">
-                                             Price:
-                                             {selectedPrice ===
-                                             "Free"
-                                                  ? selectedPrice
-                                                  : "₦" +
-                                                    new Intl.NumberFormat(
-                                                         "en-US"
-                                                    ).format(
-                                                         selectedPrice
-                                                    )}
+                                             {selectedPlan !==
+                                                  "ADVANCED LEVEL" && (
+                                                  <>
+                                                       Price:
+                                                       {selectedPrice ===
+                                                       "Free"
+                                                            ? selectedPrice
+                                                            : "₦" +
+                                                              new Intl.NumberFormat(
+                                                                   "en-US"
+                                                              ).format(
+                                                                   classPrice
+                                                              )}
+                                                  </>
+                                             )}
+                                             {selectedPlan ===
+                                                  "ADVANCED LEVEL" && (
+                                                  <>
+                                                       Price:
+                                                       ₦30,000
+                                                  </>
+                                             )}
                                         </p>
                                    </div>
 
@@ -554,6 +566,9 @@ const PaymentForm =
                                                                                 .target
                                                                                 .value
                                                                       );
+                                                                      setClassPrice(
+                                                                           selectedPrice
+                                                                      );
                                                                  }}
                                                             />
 
@@ -586,6 +601,9 @@ const PaymentForm =
                                                                            e
                                                                                 .target
                                                                                 .value
+                                                                      );
+                                                                      setClassPrice(
+                                                                           OneOnOnePrice
                                                                       );
                                                                  }}
                                                             />
