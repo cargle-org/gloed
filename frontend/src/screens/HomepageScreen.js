@@ -107,7 +107,7 @@ const siteTextData =
                          joinOurCommunityText3part2:
                               "and get answers to your SQL & Excel related questions.",
                          firesideText1:
-                              "FREE CLASS",
+                              "FREE",
                          firesideText2:
                               "Fireside Chat",
                          firesideText3part1:
@@ -299,16 +299,16 @@ const HomepageScreen =
               setMenuOpen(false)
           }
 
-          // const gotoTestimonials = () => {
-          //     // const testimonialTop = document.getElementById("testimonials").offsetTop
-          //     // console.log(testimonialTop)
-          //     // window.scrollTo({
-          //     //     top: testimonialTop,
-          //     //     left: 0,
-          //     //     behavior: 'smooth'
-          //     // });
-          //     // setMenuOpen(false)
-          // }
+          const gotoTestimonials = () => {
+              const testimonialTop = document.getElementById("testimonials").offsetTop
+              console.log(testimonialTop)
+              window.scrollTo({
+                  top: testimonialTop,
+                  left: 0,
+                  behavior: 'smooth'
+              });
+              setMenuOpen(false)
+          }
         const FiresideClass = moment("20230128", "YYYYMMDD").fromNow();
 
           return (
@@ -364,7 +364,7 @@ const HomepageScreen =
                                                        us
                                                   </span>
                                              </li>
-                                             {/* <li className=""><span onClick={gotoTestimonials} className="">{siteText.headerMenu3}</span></li> */}
+                                             <li className=""><span onClick={gotoTestimonials} className="">{siteText.headerMenu3}</span></li>
                                         </ul>
                                    </div>
                                    <div className="mobile-menu">
@@ -408,7 +408,7 @@ const HomepageScreen =
                                                             }
                                                        </span>
                                                   </li>
-                                                  {/* <li className=""><span onClick={gotoTestimonials} href="#testimonials" className="">{siteText.headerMenu3}</span></li> */}
+                                                  <li className=""><span onClick={gotoTestimonials} href="#testimonials" className="">{siteText.headerMenu3}</span></li>
                                              </ul>
                                         ) : null}
                                    </div>
@@ -1210,6 +1210,7 @@ const HomepageScreen =
                                              SlackImage
                                         }
                                         alt=""
+                                        loading="lazy"
                                         className=""
                                    />
                               </div>

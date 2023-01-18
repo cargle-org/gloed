@@ -858,12 +858,13 @@ header .header-div .header-menu ul li span {
 	background: rgba(251, 252, 236, 0.44);
 	border: 1px solid #BCBCBC;
 	color: #BCBCBC;
-	padding: 1.5rem;
-	border-radius:50%;
+	padding: 1rem;
+	border-radius: 50%;
+	top: 210px;
 } 
 
 .testimonials .swiper-button-prev::after, .testimonials .swiper-button-next::after {
-	font-size: 20px!important;
+	font-size: 15px!important;
 }
 
   .swiper-wrapper {
@@ -887,6 +888,20 @@ header .header-div .header-menu ul li span {
 	.swiper-wrapper {
 	width: 650px;
   }
+
+  .testimonials .swiper-button-prev, .testimonials .swiper-button-next{
+	top: 190px;
+	background: rgba(251, 252, 236, 0.44);
+	border: 1px solid #BCBCBC;
+	color: #BCBCBC;
+	padding: 1.5rem;
+	border-radius: 50%;
+  }
+
+
+.testimonials .swiper-button-prev::after, .testimonials .swiper-button-next::after {
+	font-size: 20px!important;
+}
   }
 
   .swiper-pagination-bullet {
@@ -940,6 +955,8 @@ header .header-div .header-menu ul li span {
 	border-radius: 50%;
 	border: 5px solid rgba(255, 201, 40, 0.42);
 	margin-right: 12px;
+	width: 50px;
+	height: 50px;
 }
 
 .testimonials .testimonial-card .testimonail-persona h6 {
@@ -1428,6 +1445,11 @@ footer .footer-div .footer-section2 .company-name {
 
 	.privacy-section{
 		width: 85%;
+	}
+
+	
+footer .footer-div .footer-section2 .copyright {
+		font-size: 14px;
 	}
 	
 }
