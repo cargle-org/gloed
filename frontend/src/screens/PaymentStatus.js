@@ -39,7 +39,7 @@ const [
                           };
                           setTimeout(() => {
                             window.location.href =
-                                 "https://gloed.co/";
+                                 "https://gloed.co/#/";
                           }, 5000)
                      }
                 )
