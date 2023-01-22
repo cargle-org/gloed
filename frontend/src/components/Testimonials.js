@@ -46,13 +46,13 @@ const Testimonials = () => {
     >
       <SwiperSlide className="testimonial-card item-b">
                                 <p className="testimonial-card-text">
-                                   “The platform is self explanatory and easy to use. You can easily get your way around it with little or no supervision ✨”
+                                   “The platform is self explanatory and easy to use. Really good experience, you can easily get your way around it with little or no supervision ✨”
                                 </p>
                                 <div className="testimonail-persona">
                                     <img src={Olayinka} alt="" className="" />
                                     <div className="testimonial-persona-text">
                                         <h6 className="testimonial-persona-name">Olayinka</h6>
-                                        <span className="testimonial-persona-name-credentials">Ex-student at Gloed</span>
+                                        <span className="testimonial-persona-name-credentials">Data Analyst</span>
                                     </div>
                                 </div>
          </SwiperSlide>
@@ -76,19 +76,7 @@ const Testimonials = () => {
                                     <img src={Ay} alt="" className="" />
                                     <div className="testimonial-persona-text">
                                         <h6 className="testimonial-persona-name">Ay</h6>
-                                        <span className="testimonial-persona-name-credentials">Ex-Student at Gloed</span>
-                                    </div>
-                                </div>
-         </SwiperSlide>
-      <SwiperSlide className="testimonial-card item-b">
-                                <p className="testimonial-card-text">
-                                   “The platform has a slick experience, that was so easy to use. I feel so less stressed as i know we are doing everything by the book.”
-                                </p>
-                                <div className="testimonail-persona">
-                                    <img src={PersonaImg} alt="" className="" />
-                                    <div className="testimonial-persona-text">
-                                        <h6 className="testimonial-persona-name">Kirko Bangs</h6>
-                                        <span className="testimonial-persona-name-credentials">Founder at Bangs INC</span>
+                                        <span className="testimonial-persona-name-credentials">Frontend Software Engineer</span>
                                     </div>
                                 </div>
          </SwiperSlide>
