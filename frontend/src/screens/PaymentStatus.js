@@ -46,10 +46,11 @@ const [
                 .catch(
                      (
                           err
-                     ) =>
-                          console.log(
-                               err
-                          )
+                     ) => {
+                          console.log( err );
+                           setPaymentStatus(false)
+                     }
+                         
                 );
       }, [ref, id]);
 

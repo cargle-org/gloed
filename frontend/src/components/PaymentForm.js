@@ -172,11 +172,22 @@ const PaymentForm =
                     if (selectedPrice === "Free") {
                         axios.post("https://gloed-api.onrender.com/api/utils/session/book-free-unauth", data)
                             .then(response => {
-                                setIsLoading(false);
-                                setRegistrationStatus("success")
+                              if(response.data.success === true){
+                                     setIsLoading(
+                                          false
+                                     );
+                                     setRegistrationStatus(
+                                          "success"
+                                     );
+                              } else {
+                                     setIsLoading(false);
+                                setRegistrationStatus("failed")
+                              }
                             })
                             .catch(err => {
                                 console.error(err.response)
+                                      setIsLoading(false);
+                                setRegistrationStatus("fail")
                             })
                         return
                     }
@@ -334,9 +345,13 @@ const PaymentForm =
                                    ) : (
                                         <h2 className="">
                                              {" "}
-                                             Failed,
-                                             Try
-                                             Again.
+                                             Failed.{" "}
+                                             <br />
+                                             Please
+                                             try
+                                             again
+                                             later.{" "}
+                                             <br />
                                              For
                                              more
                                              information,
