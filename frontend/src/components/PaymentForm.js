@@ -10,6 +10,7 @@ import { useHistory } from "react-router-dom";
 import { XCircle } from "react-feather";
 import { Clock } from "../images/Clock";
 import TimeCard from "./TimeCard";
+import { DualRing } from "../images/DualRing";
 import { Icon } from "@iconify/react";
 
 const PaymentForm =
@@ -749,11 +750,7 @@ const PaymentForm =
                                                        onClickProceed
                                                   }
                                              >
-                                                  <Icon
-                                                       icon="eos-icons:three-dots-loading"
-                                                       color="white"
-                                                       width="43"
-                                                  />
+                                                  <DualRing />
                                              </button>
                                         ) : (
                                              <button

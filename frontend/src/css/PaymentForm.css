@@ -218,7 +218,7 @@
 }
 
 .payment-form .register-button.loading-button {
-    padding:0 1rem;
+    padding:.3rem 1rem;
 }
 
 .payment-form .register-button:disabled {
