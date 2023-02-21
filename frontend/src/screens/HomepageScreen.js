@@ -594,7 +594,7 @@ const HomepageScreen =
                                              {" "}
                                              Next
                                              Fireside
-                                             Chat : Jan. 28
+                                             Chat : Mar. 25
                                         
                                         </div>
                                    )}
