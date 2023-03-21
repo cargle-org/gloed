@@ -256,10 +256,10 @@ const PaymentForm =
                ) {
                     setPlanDates(
                          [
-                              " Mar 11, 2023",
                               "Apr 8, 2023",
                               "May 13, 2023",
-                              "Jun 17, 2023",
+                              "Jun 10, 2023",
+                              " Jul 8, 2023",
                          ]
                     );
                } else if (
@@ -268,10 +268,10 @@ const PaymentForm =
                ) {
                     setPlanDates(
                          [
-                              " Mar 18, 2023",
                               "Apr 15, 2023",
                               "May 20, 2023",
-                              "Jun 25, 2023"
+                              "Jun 25, 2023",
+                            " Jul 15, 2023",
                          ]
                     );
                } else if (

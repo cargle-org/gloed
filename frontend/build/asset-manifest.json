@@ -1,0 +1,41 @@
+{
+  "files": {
+    "main.css": "/static/css/main.d4eb1c5a.chunk.css",
+    "main.js": "/static/js/main.83ea9f7f.chunk.js",
+    "main.js.map": "/static/js/main.83ea9f7f.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.ff5b8ea4.js",
+    "runtime-main.js.map": "/static/js/runtime-main.ff5b8ea4.js.map",
+    "static/css/2.9a6514cd.chunk.css": "/static/css/2.9a6514cd.chunk.css",
+    "static/js/2.da8590ba.chunk.js": "/static/js/2.da8590ba.chunk.js",
+    "static/js/2.da8590ba.chunk.js.map": "/static/js/2.da8590ba.chunk.js.map",
+    "index.html": "/index.html",
+    "static/css/2.9a6514cd.chunk.css.map": "/static/css/2.9a6514cd.chunk.css.map",
+    "static/css/main.d4eb1c5a.chunk.css.map": "/static/css/main.d4eb1c5a.chunk.css.map",
+    "static/js/2.da8590ba.chunk.js.LICENSE.txt": "/static/js/2.da8590ba.chunk.js.LICENSE.txt",
+    "static/media/Ay.87793d93.png": "/static/media/Ay.87793d93.png",
+    "static/media/Admin.css": "/static/media/Monument Extended.0d9895e9.woff",
+    "static/media/Olayinka.27c172f5.jpeg": "/static/media/Olayinka.27c172f5.jpeg",
+    "static/media/Roland.69b867bb.png": "/static/media/Roland.69b867bb.png",
+    "static/media/Spinner.c5bf1ba2.gif": "/static/media/Spinner.c5bf1ba2.gif",
+    "static/media/about-us-image.02792dcf.svg": "/static/media/about-us-image.02792dcf.svg",
+    "static/media/caret-down.64fec91f.svg": "/static/media/caret-down.64fec91f.svg",
+    "static/media/close.92415fc1.svg": "/static/media/close.92415fc1.svg",
+    "static/media/footer-design.b2578176.svg": "/static/media/footer-design.b2578176.svg",
+    "static/media/instagram.f8c1c558.svg": "/static/media/instagram.f8c1c558.svg",
+    "static/media/jumbotron-img.bda27bb7.svg": "/static/media/jumbotron-img.bda27bb7.svg",
+    "static/media/linkedIn.0148aa16.svg": "/static/media/linkedIn.0148aa16.svg",
+    "static/media/logo.884c9b3e.svg": "/static/media/logo.884c9b3e.svg",
+    "static/media/logo2.53fba8c9.svg": "/static/media/logo2.53fba8c9.svg",
+    "static/media/slack.6b33d919.svg": "/static/media/slack.6b33d919.svg",
+    "static/media/slack.c08658ae.svg": "/static/media/slack.c08658ae.svg",
+    "static/media/testimonial-card-img.366e1bf2.svg": "/static/media/testimonial-card-img.366e1bf2.svg",
+    "static/media/twitter.0a42120d.svg": "/static/media/twitter.0a42120d.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.ff5b8ea4.js",
+    "static/css/2.9a6514cd.chunk.css",
+    "static/js/2.da8590ba.chunk.js",
+    "static/css/main.d4eb1c5a.chunk.css",
+    "static/js/main.83ea9f7f.chunk.js"
+  ]
+}
