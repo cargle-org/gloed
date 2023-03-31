@@ -241,7 +241,7 @@ const PaymentForm =
                               ""
                     ) {
                          document.querySelector(
-                              "#registerButton"
+                     +         "#registerButton"
                          ).disabled = false;
                     } else {
                          document.querySelector(
@@ -259,7 +259,7 @@ const PaymentForm =
                               "Apr 8, 2023",
                               "May 13, 2023",
                               "Jun 10, 2023",
-                              " Jul 8, 2023",
+                              "Jul 8, 2023",
                          ]
                     );
                } else if (
@@ -271,7 +271,7 @@ const PaymentForm =
                               "Apr 15, 2023",
                               "May 20, 2023",
                               "Jun 25, 2023",
-                            " Jul 15, 2023",
+                            " Jul 15 , 2023",
                          ]
                     );
                } else if (
@@ -280,10 +280,11 @@ const PaymentForm =
                ) {
                     setPlanDates(
                          [
-                              "Mar 25, 2023",
                               "Apr 29, 2023",
+                              "Mar 27, 2023",
                               "Jun 24, 2023",
-                              "Jul 29, 2023"
+                              "Jul 29, 2023",
+                            
                          ]
                     );
                } else {
