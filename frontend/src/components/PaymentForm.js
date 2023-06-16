@@ -241,7 +241,7 @@ const PaymentForm =
                               ""
                     ) {
                          document.querySelector(
-                     +         "#registerButton"
+                            "#registerButton"
                          ).disabled = false;
                     } else {
                          document.querySelector(
@@ -568,36 +568,36 @@ const PaymentForm =
                                                   "ADVANCED LEVEL" ? (
                                                        ""
                                                   ) : (
-                                                       // <>
-                                                       //      {" "}
-                                                       //      <input
-                                                       //           type="radio"
-                                                       //           id="schedule"
-                                                       //           name="scheduleType"
-                                                       //           value="scheduled"
-                                                       //           onChange={(
-                                                       //                e
-                                                       //           ) => {
-                                                       //                setScheduledType(
-                                                       //                     e
-                                                       //                          .target
-                                                       //                          .value
-                                                       //                );
-                                                       //                setClassPrice(
-                                                       //                     selectedPrice
-                                                       //                );
-                                                       //           }}
-                                                       //      />
+                                                       <>
+                                                            {" "}
+                                                            <input
+                                                                 type="radio"
+                                                                 id="schedule"
+                                                                 name="scheduleType"
+                                                                 value="scheduled"
+                                                                 onChange={(
+                                                                      e
+                                                                 ) => {
+                                                                      setScheduledType(
+                                                                           e
+                                                                                .target
+                                                                                .value
+                                                                      );
+                                                                      setClassPrice(
+                                                                           selectedPrice
+                                                                      );
+                                                                 }}
+                                                            />
 
-                                                       //       {" "}
-                                                       //      <label
-                                                       //           className="radio-label scheduled"
-                                                       //           htmlFor="html"
-                                                       //      >
-                                                       //           Group
-                                                       //      </label>
-                                                       // </>
-                                                 "" )}
+                                                             {" "}
+                                                            <label
+                                                                 className="radio-label scheduled"
+                                                                 htmlFor="html"
+                                                            >
+                                                                 Group
+                                                            </label>
+                                                       </>
+                                                 )}
 
                                                    {" "}
                                                   {selectedPlan ===
@@ -664,7 +664,7 @@ const PaymentForm =
                                                        />
                                                   </div>
                                              )}
-                                             {/* {scheduleType ===
+                                             {scheduleType ===
                                                   "scheduled" && (
                                                   <div className="input-group">
                                                        <label htmlFor="name">
@@ -718,7 +718,7 @@ const PaymentForm =
                                                                  )}
                                                        </div>
                                                   </div>
-                                             )} */}
+                                             )}
 
                                              <div className="input-group">
                                                   <label htmlFor="comments">
